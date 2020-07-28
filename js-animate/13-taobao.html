@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>taobao</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        #move{
+            padding:10px;
+            width:300px;
+            background-color:#f4f4f4;
+            margin:10px auto;
+            border:1px solid #ccc;
+        }
+        #move a{
+            display:inline-block;
+            width:58px;
+            height:25px;
+            border:1px solid #ddd;
+            border-radius: 3px;
+            background-color:#fff;
+            text-align:center;
+            margin:10px 17px;
+            position:relative;
+            padding-top:40px;
+            color:#9c9c9c;
+            font-size:12px;
+            text-decoration:none;
+            line-height:25px;
+            overflow:hidden;
+        }
+        #move a i{
+            position:absolute;
+            top:15px;
+            display:inline-block;
+            width:100%;
+            opacity:1;
+        }
+        #move a:hover{
+            color:#F00;
+        }
+        .tbh-icon{
+            background:url(https://img.alicdn.com/tfs/TB1eiXTXlTH8KJjy0FiXXcRsXXa-24-595.png);
+        }
+        .tbh-conve-icon{
+            width:24px;
+            height:24px;
+            left:17px;
+            background-repeat: no-repeat;
+        }
+        .tbh-phone-icon{
+            background-position: 0px 0px;
+        }
+        .tbh-trip-icon{
+            background-position: 0px -44px;
+        }
+        .tbh-baoxian-icon{
+            background-position: 0px -88px;
+        }
+        .tbh-game-icon{
+            background-position: 0px -132px;
+        }
+        .tbh-caipiao-icon{
+            background-position: 0px -176px;
+        }
+        .tbh-movie-icon{
+            background-position: 0px -220px;
+        }
+    </style>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('#move a').mouseenter(function(){
+                //速度单位 ms
+                $(this).find('i').animate({top:"-25px",opacity:"0"},300,function(){
+                    $(this).css({top:"30px"});
+                    $(this).animate({top:"15px",opacity:"1"},200);
+                }) 
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="move">
+        <a href="#"><i class="tbh-icon tbh-conve-icon tbh-phone-icon"></i><p>充话费</p></a>
+        <a href="#"><i class="tbh-icon tbh-conve-icon tbh-trip-icon"></i><p>旅行</p></a>
+        <a href="#"><i class="tbh-icon tbh-conve-icon tbh-baoxian-icon"></i><p>车险</p></a>
+        <a href="#"><i class="tbh-icon tbh-conve-icon tbh-game-icon"></i><p>游戏</p></a>
+        <a href="#"><i class="tbh-icon tbh-conve-icon tbh-caipiao-icon"></i><p>彩票</p></a>
+        <a href="#"><i class="tbh-icon tbh-conve-icon tbh-movie-icon"></i><p>电影</p></a>
+    </div>
+</body>
+</html>

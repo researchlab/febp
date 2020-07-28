@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>taobao</title>
+    <style>
+        body,div,a,i,p,ul,li{
+            margin:0px;
+            padding:0px;
+        }
+        a{
+            color: #3c3c3c;
+            font-size:12px;
+            cursor: pointer;
+            text-decoration: none;
+            display:inline-block;
+            position:relative;
+            
+        }
+        #move a i{
+            /* position:absolute; */
+            top:20px;
+            opacity:1;
+        }
+        ul,li{
+            list-style: none;
+        }
+        li{
+            width:71px;
+            height:75px;
+            float:left;
+            border:1px solid #f4f4f4;
+            text-align: center;
+        }
+        li.min{
+            width:70px;
+        }
+        .border-left-transparent{
+            border-left-color: transparent;
+        }
+        .border-top-transparent{
+            border-top-color: transparent;
+        }
+        #move{
+            width:294px;
+            height:154px;
+            background: white;
+            margin:0 auto;
+            margin-top:50px;
+        }
+        .tbh-icon{
+            background:url(https://img.alicdn.com/tfs/TB1eiXTXlTH8KJjy0FiXXcRsXXa-24-595.png);
+        }
+        .tbh-conve-icon{
+            display:inline-block;       
+            width:24px;
+            height:24px;
+            margin-top:20px;
+        }
+        .tbh-phone-icon{
+            background-position: 0px 0px;
+        }
+        .tbh-trip-icon{
+            background-position: 0px -44px;
+        }
+        .tbh-baoxian-icon{
+            background-position: 0px -88px;
+        }
+        .tbh-game-icon{
+            background-position: 0px -132px;
+        }
+        .tbh-caipiao-icon{
+            background-position: 0px -176px;
+        }
+        .tbh-movie-icon{
+            background-position: 0px -220px;
+        }
+        .tbh-hotel-icon{
+            background-position: 0px -264px;
+        }
+        .tbh-money-icon{
+            background-position: 0px -308px;
+        }
+        p{
+            line-height: 24px;
+            /* color:#333; */
+        }
+        a:hover{
+            color:orangered;
+
+        }
+    </style>
+    <script src="./moves.js"></script>
+    <script>
+        window.onload = function(){
+            var oMove = document.getElementById('move');
+            var aList = oMove.getElementsByTagName('a');
+            for (var i=0; i<aList.length;i++){
+                aList[i].onmouseover = function(){
+                    var _this = this.getElementsByTagName('i')[0];
+                    startMove(_this,{top:-55,opacity:0})
+                }
+                aList[i].onmouseout = function(){
+                    var _this = this.getElementsByTagName('i')[0];
+                    startMove(_this,{top:20,opacity:100})
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="move">
+        <ul>
+            <li class="min"><a href="#"><i class="tbh-icon tbh-conve-icon tbh-phone-icon"></i><p>充话费</p></a></li>
+            <li class="border-left-transparent"><a href="#"><i class="tbh-icon tbh-conve-icon tbh-trip-icon"></i><p>旅游</p></a></li>
+            <li class="border-left-transparent"><a href="#"><i class="tbh-icon tbh-conve-icon tbh-baoxian-icon"></i><p>车险</p></a></li>
+            <li class="min border-left-transparent"><a href="#"><i class="tbh-icon tbh-conve-icon tbh-game-icon"></i><p>游戏</p></a></li>
+            <li class="min border-top-transparent"><a href="#"><i class="tbh-icon tbh-conve-icon tbh-caipiao-icon"></i><p>彩票</p></a></li>
+            <li class="border-left-transparent border-top-transparent"><a href="#"><i class="tbh-icon tbh-conve-icon tbh-movie-icon"></i><p>电影</p></a></li>
+            <li class="border-left-transparent border-top-transparent"><a href="#"><i class="tbh-icon tbh-conve-icon tbh-hotel-icon"></i><p>酒店</p></a></li>
+            <li class="min border-left-transparent border-top-transparent"><a href="#"><i class="tbh-icon tbh-conve-icon tbh-money-icon"></i><p>理财</p></a></li>
+        </ul>
+        
+    </div>
+</body>
+</html>

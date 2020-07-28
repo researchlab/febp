@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>share</title>
+    <style>
+        body,div,span{
+            margin:0;
+            padding:0;
+            font-size:12px;
+        }
+        #div1{
+            width:200px;
+            height:200px;
+            background:red;
+            position:relative;
+            left:-200px;
+            top: 0;
+        }
+        #div1 span{
+            width:20px;
+            height:50px;
+            background: blue;
+            position:absolute;
+            left:200px;
+            top:75px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var oDiv = document.getElementById('div1');
+            oDiv.onmouseover = function(){
+                startMove(0);
+            }
+            oDiv.onmouseout = function(){
+                startMove(-200);
+            }
+        }
+        var timer = null; 
+        function startMove(iTarget){
+            clearInterval(timer);
+            var oDiv = document.getElementById('div1');
+            timer = setInterval(function(){
+                var speed = 0; 
+                oDiv.offsetLeft > iTarget ? speed = -50 : speed = 50;
+                if (oDiv.offsetLeft == iTarget ){
+                    clearInterval(timer);
+                } else {
+                    oDiv.style.left = oDiv.offsetLeft + speed + 'px';
+                }
+            },30)
+        }
+    </script>
+</head>
+<body>
+    <div id="div1"><span id="share">分享</span></div>
+</body>
+</html>

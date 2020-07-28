@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>opacity</title>
+    <style>
+        body,div{
+            margin:0;
+            padding:0;
+        }
+        div{
+            width:100px;
+            height:100px;
+            background:red;
+            opacity:.3;
+            margin:10px;
+            float:left;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var oDiv = document.getElementsByTagName('div');
+           for (var i =0; i<oDiv.length; i++){
+            oDiv[i].timer =null; 
+            oDiv[i].alpha = 30;
+            oDiv[i].onmousemove = function(){
+                startMove(this, 100);
+            }
+            oDiv[i].onmouseout = function(){
+                startMove(this, 30);
+            }
+           }
+        }
+        // var timer =null;
+        // var alpha = 30;
+        function startMove(obj, iTarget){
+            var oDiv = document.getElementById("div1");
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function(){
+                var speed = 0; 
+                obj.alpha > iTarget? speed=-10:speed=10;
+                if( obj.alpha == iTarget){
+                    clearInterval(obj.timer);
+                }else{
+                    obj.alpha += speed;
+                    // obj.style.filter = 'alpha(opactiy:'+obj.alpha+')';
+                    obj.style.opacity = obj.alpha / 100;
+                }
+            },30);
+        }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <div id="div4"></div>
+</body>
+</html>

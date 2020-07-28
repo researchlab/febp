@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fh</title>
+    <style>
+        body,ul,li{
+            margin:0px;
+            padding:0px;
+        }
+        ul,li{
+            list-style:none;
+        }
+        ul li {
+            width:200px;
+            height:100px;
+            background:yellow;
+            margin-bottom:20px;
+            border:1px solid #000;
+            /* filter:alpha(opacity:30); */
+            opacity:0.3;
+        }
+    </style>
+    <script src="./moves.js"></script>
+    <script>
+        window.onload = function(){
+            var Li = document.getElementById('li1');
+            Li.onmouseover = function(){
+                startMove(Li, {width:400,height:200,opacity:100});
+            }
+            Li.onmouseout = function(){
+                startMove(Li, {width:200,height:100,opacity:30});
+            }
+        }
+        // window.onload = function(){
+        //     var oLi = document.getElementById('li1');
+        //     oLi.onmouseover = function(){
+        //        startMove(oLi,'width',400);
+        //     }
+        //     oLi.onmouseout = function(){
+                
+        //     }
+        // }
+    </script>
+</head>
+<body>
+    <ul>
+        <li id="li1"></li>
+    </ul>
+    
+</body>
+</html>

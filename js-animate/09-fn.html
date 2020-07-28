@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fh</title>
+    <style>
+        body,ul,li{
+            margin:0px;
+            padding:0px;
+        }
+        ul,li{
+            list-style:none;
+        }
+        ul li {
+            width:200px;
+            height:100px;
+            background:yellow;
+            margin-bottom:20px;
+            border:1px solid #000;
+            /* filter:alpha(opacity:30); */
+            opacity:0.3;
+        }
+    </style>
+    <script src="./move.js"></script>
+    <script>
+        window.onload = function(){
+            var oLi = document.getElementById('li1');
+            oLi.onmouseover = function(){
+                startMove(oLi, 'width',400,function(){
+                    startMove(oLi,'height',200,function(){
+                        startMove(oLi,'opacity',100);
+                    });
+                });
+            }
+            oLi.onmouseout = function(){
+                startMove(oLi,'opacity',30,function(){
+                    startMove(oLi,'height',100,function(){
+                        startMove(oLi,'width',200);
+                    });
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul>
+        <li id="li1"></li>
+    </ul>
+    
+</body>
+</html>

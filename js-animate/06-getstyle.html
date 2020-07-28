@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getstyle</title>
+    <style>
+        #div1{
+            width:200px;
+            height:200px;
+            background:#F00;
+            border:50px solid black;
+            font-size:12px;
+            color:#fff;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            startMove();
+        }
+        function startMove(){
+            setInterval(function(){
+                var oDiv = document.getElementById('div1');
+                oDiv.style.width = parseInt(getStyle(oDiv,'width')) -1 +'px';
+                oDiv.style.fontSize = parseInt(getStyle(oDiv, 'fontSize')) +1 +'px';
+            },30)
+        }
+        function getStyle(obj,attr){
+            if (obj.currentStyle){
+                return obj.currentStyle[attr];
+            }else {
+                return getComputedStyle(obj,false)[attr];
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">font-size</div>
+</body>
+</html>
