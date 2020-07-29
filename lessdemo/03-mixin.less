@@ -1,0 +1,59 @@
+@fontSize: 12px;
+@bgColor: red;
+
+// 因为加上() 所以编译时不会单独生成对应的css
+.mixinbox(){
+    font-size:13px;
+}
+// mixin  编译时会生成对应的css 
+.box{
+    color:green;
+}
+// mixin 多个参数用; 分割, 通过:value 设置默认值
+.mixinconv(@color:red;@padding;@margin:2){
+    color:@color;
+    padding:@padding;
+    margin:@margin @margin @margin @margin;
+}
+
+.box1{
+    .box;  //mixin
+    .mixinbox();
+    line-height:2em;
+}
+
+.box2{
+    .box(); //mixin   .box()  与 .box 效果一样; 
+    //.box;
+    line-height:3em;
+}
+
+// mixin; 
+.block(@fontSize){
+    font-size: @fontSize;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper{
+    background:lighten(@bgColor, 40%);
+    .nav{
+        .block(@fontSize);
+        // 如果没有默认值的参数， 则引用时必须填写;
+        .mixinconv(@padding:2;@margin:5);
+    }
+    .content{
+        .block(@fontSize + 2px);
+        &:hover{
+            background:red;
+        }
+    }
+}
+
+
+

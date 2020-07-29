@@ -1,0 +1,35 @@
+.box {
+  color: green;
+}
+.box1 {
+  color: green;
+  font-size: 13px;
+  line-height: 2em;
+}
+.box2 {
+  color: green;
+  line-height: 3em;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+.wrapper {
+  background: #ffcccc;
+}
+.wrapper .nav {
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: red;
+  padding: 2;
+  margin: 5 5 5 5;
+}
+.wrapper .content {
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.wrapper .content:hover {
+  background: red;
+}

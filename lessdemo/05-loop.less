@@ -1,0 +1,10 @@
+.gen-col(@n) when (@n > 0 ){
+    // 递归调用自己，每次参数减一;
+    .gen-col(@n - 1);
+    // 生成css
+    .col-@{n}{
+        width:1000px/12*@n;
+    }
+}
+
+.gen-col(12);

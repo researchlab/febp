@@ -1,0 +1,38 @@
+@fontSize: 12px;
+@bgColor: red;
+
+.block{
+    font-size: @fontSize;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.mixinconv(@color:blue; @fontWeight:normal){
+    font-weight:@fontWeight;
+    color:@color;
+    display:flex;
+}
+
+body{
+    padding:0;
+    margin:0;
+}
+
+.wrapper{
+    background: lighten(@bgColor,40%);
+
+    // 扩展自.block mixin
+    // 扩展的mixin 是不能再次指定参数的
+    // 如.nav:extend(.mixinconv(@fontSize:16px)){} 这个是不对的，因为指定了参数;
+    .nav:extend(.block){
+        color:#333;
+        .mixinconv(@fontWeight:bold);
+    }
+    .content{
+        // 扩展的第二种写法 &:extend(.block)
+        &:extend(.block);
+        &:hover{
+            background:red;
+        }
+    }
+}
