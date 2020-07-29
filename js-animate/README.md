@@ -19,6 +19,8 @@
 7. 原生案例
    - [11-taobao.html](11-taobao.html)
    - [12-taobao.html](12-taobao.html)
-		 ![12-taobao](./12-taobao.gif)
+		 
+   ![12-taobao](https://github.com/researchlab/febp/blob/master/js-animate/12-taobao.gif)
+   
 8. JQuery案例
    - [13-taobao.html](13-taobao.html)
