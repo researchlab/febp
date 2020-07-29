@@ -1,0 +1,19 @@
+// // @mixin 显示声明 mixin
+// @mixin gen-col($n){
+//     @if $n > 0 {   // @if 条件判断
+//         @include gen-col($n - 1); // @include 显示引用mixin
+//         .col-#{$n}{
+//             width: 1000px/12*$n;
+//         }
+//     }
+// }
+
+// // @include 显示引用mixin
+// @include gen-col(12);
+
+// @for 循环方式 
+@for $i from 1 through 12 {
+    .col-#{$i}{
+        width: 1000px/12*$i;
+    }
+}

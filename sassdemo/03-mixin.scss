@@ -1,0 +1,35 @@
+$fontSize: 12px;
+$bgColor: red;
+
+// 必须显示使用@mixin 声明一个mixin 
+// 多个变量用, 分割,  默认值用:冒号设置; 
+// 给其中变量设置值时， 可以用 $变量名:变量值  来单独设置某个变量的值 
+@mixin block($color:blue,$fontSize:16px){
+    font-size: $fontSize;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color:$color;
+}
+
+body{
+    padding:0;
+    margin:0;
+}
+
+.wrapper{
+    background:lighten($bgColor,40%);
+    // 引用时 必须用 @include 显示引用;
+    @include block($bgColor);
+    .nav{
+        @include block($bgColor,$fontSize);
+    }
+    .content{
+        // @include block($fontSize:($fontSize +2px),$color:orange);
+        // 指定参数名称 传递参数值 
+        @include block($fontSize:($fontSize +3px));
+
+        &:hover{
+            background:red;
+        }
+    }
+}

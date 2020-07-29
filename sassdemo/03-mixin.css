@@ -1,0 +1,22 @@
+body {
+  padding: 0;
+  margin: 0; }
+
+.wrapper {
+  background: #ffcccc;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: red; }
+  .wrapper .nav {
+    font-size: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: red; }
+  .wrapper .content {
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: blue; }
+    .wrapper .content:hover {
+      background: red; }

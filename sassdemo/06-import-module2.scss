@@ -1,0 +1,10 @@
+.module2{
+    .box{
+        font-size: $fontSize + 5px;
+        color: $themeColor;
+    }
+    .tips{
+        font-size: $fontSize;
+        color: lighten($themeColor,20%);
+    }
+}
