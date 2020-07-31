@@ -161,13 +161,13 @@ label标签不会向用户呈现任何特殊效果，它的作用是为鼠标用
 
  ```html
  <form action="save.php" method="post">
-		<label>性别:</label>
+    <label>性别:</label>
     <label>男</label>
-		<input type="radio" value="1" name="gender" />
-		<label>女</label>
-		<input type="radio" value="2" name="gender" />
-		<input type="checkbox" value="3" name="num1"/>
-		<input type="checkbox" value="2" name="num2" checked="checked"/>
+    <input type="radio" value="1" name="gender" />
+    <label>女</label>
+    <input type="radio" value="2" name="gender" />
+    <input type="checkbox" value="3" name="num1"/>
+    <input type="checkbox" value="2" name="num2" checked="checked"/>
 </form>
  ```
 
@@ -190,10 +190,10 @@ form 标签中  type=submit 提交 , type=reset 重置 才有效;
 
 ```html
 <select >
-	<option value="看书">看书</option>
-	<option value="旅游">旅游</option>
-	<option value="运动">运动</option>
-	<option value="购物" selected="selected">购物</option>
+   <option value="看书">看书</option>
+   <option value="旅游">旅游</option>
+   <option value="运动">运动</option>
+   <option value="购物" selected="selected">购物</option>
 </select>
 ```
 
