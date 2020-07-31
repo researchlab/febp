@@ -26,7 +26,7 @@
 
 讲解：
 
--  src：标识图像的位置；
+- src：标识图像的位置；
 
 - alt：指定图像的描述性文本，当图像不可见时（下载不成功时），可看到该属性指定的文本；
 
@@ -38,11 +38,11 @@
 
 创建表格的四个元素：table、tr、th、td
 
-- ` <table>…</table>`：整个表格以<table>标记开始、</table>标记结束。
+- `<table>…</table>`：整个表格以`<table>`标记开始、`</table>`标记结束。
 
 - `<tr>…</tr>`：表格的一行，所以有几对tr 表格就有几行。
 
-- `<td>…</td>`：表格的一个单元格，一行中包含几对<td>...</td>，说明一行中就有几列。
+- `<td>…</td>`：表格的一个单元格，一行中包含几对`<td>...</td>`，说明一行中就有几列。
 
 - `<th>…</th>`：表格的头部的一个单元格，表格表头。
 
@@ -66,13 +66,13 @@
 
 - table表格在没有添加border属性之前, 在浏览器中显示是没有表格线的。
 
-- <thead>标签定义表格头部,<tbody>标签来定义表格的内容,<tfoot>来定义表格的底部, 
+- `<thead>`标签定义表格头部,`<tbody>`标签来定义表格的内容,`<tfoot>`来定义表格的底部, 
 
-> 如果不加<thead><tbody><tfooter> , table表格加载完后才显示。加上这些表格结构， tbody包含行的内容下载完优先显示，不必等待表格完全加载结束后再显示，同时如果表格很长，用tbody分段，可以一部分一部分地显示。（通俗理解table 可以按结构一块块的显示，不在等整个表格加载完后显示。）
+> 如果不加`<thead><tbody><tfooter>` , table表格加载完后才显示。加上这些表格结构， tbody包含行的内容下载完优先显示，不必等待表格完全加载结束后再显示，同时如果表格很长，用tbody分段，可以一部分一部分地显示。（通俗理解table 可以按结构一块块的显示，不在等整个表格加载完后显示。）
 
 ##### 8.`数据交互`
 
-网站怎样与用户进行交互？答案是使用HTML表单(form)。表单是可以把浏览者输入的数据传送到服务器端，这样服务器端程序就可以处理表单传过来的数据。
+网站怎样与用户交互?答案是用HTML表单(form)。表单是可以把浏览者输入的数据传送到服务器端，这样服务器端程序就可以处理表单传过来的数据。
 
 语法：
 
@@ -82,7 +82,7 @@
 
 讲解：
 
-- `<form>...<form>`标签是成对出现的，以<form>开始，以</form>结束。
+- `<form>...<form>`标签是成对出现的，以`<form>`开始，以`</form>`结束。
 
 - action: 浏览者输入的数据被传送到的地方,比如一个PHP页面(save.php)。
 
@@ -90,9 +90,9 @@
 
 注意:
 
-- 所有表单控件（文本框、文本域、按钮、单选框、复选框等）都必须放在 <form></form> 标签之间（否则用户输入的信息可提交不到服务器上哦！）。
+- 所有表单控件（文本框、文本域、按钮、单选框、复选框等）都必须放在 `<form></form>`标签之间（否则用户输入的信息提交不到服务器上）。
 
-- method : post/get 的区别这一部分内容属于后端程序员考虑的问题。感兴趣的小伙伴可以查看本小节的 wiki，里面有详细介绍。
+- method : post/get 的区别这一部分内容属于后端程序员考虑的问题。
 
 ##### 9.`input标签`
 
@@ -106,7 +106,7 @@
 
      1、input的type属性设置为url,则表示该输入框的类型为网址。
 
-     2、数字框的值需以http://或者https://开头,且后面必须有内容,否则表单提交的时候会报错误提示。
+     2、数字框的值需以`http://`或者`https://`开头,且后面必须有内容,否则表单提交的时候会报错误提示。
 
 - type=email
 
@@ -132,7 +132,7 @@ label标签不会向用户呈现任何特殊效果，它的作用是为鼠标用
 
 ```html
 <form>
-	<label for="email">输入你的邮箱地址</label>
+  <label for="email">输入你的邮箱地址</label>
   <input type="email" id="email" placeholder="Enter email">
 </form>
 ```
@@ -159,7 +159,7 @@ label标签不会向用户呈现任何特殊效果，它的作用是为鼠标用
 
 - checked：当设置 checked="checked" 时，该选项被默认选中
 
-   ```html
+ ```html
  <form action="save.php" method="post">
 		<label>性别:</label>
     <label>男</label>
@@ -169,7 +169,7 @@ label标签不会向用户呈现任何特殊效果，它的作用是为鼠标用
 		<input type="checkbox" value="3" name="num1"/>
 		<input type="checkbox" value="2" name="num2" checked="checked"/>
 </form>
-   ```
+ ```
 
 form 标签中  type=submit 提交 , type=reset 重置 才有效; 
 
@@ -186,14 +186,14 @@ form 标签中  type=submit 提交 , type=reset 重置 才有效;
 
 - option标签放选项内容，不放置其他标签。
 
-- value： 向服务器提交的值
+- value:向服务器提交的值
 
 ```html
 <select >
-		<option value="看书">看书</option>
-		<option value="旅游">旅游</option>
-		<option value="运动">运动</option>
-		<option value="购物" selected="selected">购物</option>
+	<option value="看书">看书</option>
+	<option value="旅游">旅游</option>
+	<option value="运动">运动</option>
+	<option value="购物" selected="selected">购物</option>
 </select>
 ```
 
