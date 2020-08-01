@@ -56,6 +56,22 @@ todolist.js
 
 JSX要求 所有元素要包含在一个根元素中, 一般情况下会在最外层包一个`<div></div>`, 但是div 会显示在html中，可能会影响布局(如display:flex)， 如果不想在html中显示这个div，则可以使用React16 提供的占位符组件 Fragment, 在html是不显示的;
 
+```jsx
+class TodoList extends Component {
+    render() {
+        return (
+            < Fragment >
+               <div></div>
+               <div>
+                <ul>
+                    <li></li>
+                </ul>
+               </div>
+            </Fragment >
+        );
+    }
+}
+```
 3. 数据变量
 
 React 是通过改变状态来修改数据的， 组件中的数据变量都是声明在constructor构造函数中, 
@@ -213,7 +229,7 @@ handleBtnClick() {
         }))
     }
 ```
-- s
+- handleItemDelete(index)
 ```jsx
 handleItemDelete(index) {
         // 7.immutable 
