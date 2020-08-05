@@ -468,6 +468,22 @@ componentDidMount(){
     }
 ```
 
+使用Charles 进行接口数据模拟
+
+[Charles初次使用抓取不到Chrome浏览器上的localhost:3000请求！](https://zhuanlan.zhihu.com/p/67259071)
+
+也可以修改react项目的默认域名
+在react项目的package.json文件中将原来的
+
+> "start": “react-scripts start”
+
+改为
+
+> "set PORT=3000 HOST=localhost.charlesproxy.com && react-scripts start"
+
+项目的本地启动地址就变成了了http://localhost.charlesproxy.com:3000。
+此时再用charles模拟数据就成功了。
+
 ##### React 特性
 
 - 声明式开发 
