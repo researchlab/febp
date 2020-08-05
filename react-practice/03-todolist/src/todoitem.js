@@ -41,7 +41,7 @@ TodoItem.propTypes = {
     deleteItem: PropTypes.func,
     index: PropTypes.number,
     test: PropTypes.string.isRequired,
-    item: PropTypes.arrayOf(PropTypes.string, PropTypes.number), // 指item可以是string 或者number类型
+    item: PropTypes.oneOfType([PropTypes.string, PropTypes.number]), // 指item可以是string 或者number类型
 }
 
 //有时父组件并不一定能传递某个字段， 这时可以给这些字段定义一个默认值, 此时就要用到 defaultProps

@@ -285,7 +285,7 @@ TodoItem.propTypes = {
     deleteItem: PropTypes.func,
     index: PropTypes.number,
     test: PropTypes.string.isRequired,
-    item: PropTypes.arrayOf(PropTypes.string, PropTypes.number), // 指item可以是string 或者number类型
+    item: PropTypes.oneOfType([PropTypes.string, PropTypes.number]), // 指item可以是string 或者number类型
 }
 
 //有时父组件并不一定能传递某个字段， 这时可以给这些字段定义一个默认值, 此时就要用到 defaultProps
@@ -372,6 +372,32 @@ React 整个渲染过程
 虚拟DOM有什么好处? 
 1.性能提升了;
 2.它使得跨端应用得以实现, React Native;  使得React 即可以开发网页应用， 也可以开发原生应用; 
+
+虚拟DOM的Diff算法
+
+React的虚拟DOM 是同层比较的, 循环渲染中key 选取尽量使用唯一的值， 不建议使用index作为key  
+
+React 中ref的使用
+
+React16 提供了一个ref属性， 它等于一个剪头函数,这个剪头函数接收一个参数， 参数名称用户可以自定义; ref属性主要用来操作DOM元素;
+
+```jsx
+ <input
+onChange={this.handleInputChange}
+ref={(input)=>{this.input = input}} // 这里的thisinput 就指向了当前input这个dom元素， 那么上面引用handleInputChange函数中要操作这个dom元素即可用this.inpu来操作了
+/>
+
+handleInputChange() { // 上面用ref 这个属性后，这个就不用变量e了
+        //优化2
+        // const value = e.target.value;
+        const value = this.input.value; // 因为上面用了ref属性，这里可以直接用this.input 来操作 上面的input这个dom元素;
+        // 但是React是数据驱动渲染的，所以不推荐用户自己操作DOM元素，也就不推荐使用这个ref属性; 
+        this.setState(() => ({
+            inputValue: value
+        }))
+
+    }
+```
 
 
 

@@ -34,10 +34,11 @@ class TodoList extends Component {
                         className='input'
                         value={this.state.inputValue}
                         onChange={this.handleInputChange}
+                        ref={(input)=>{this.input = input}} // 这里的this.input 就指向了当前input这个dom元素， 那么上面引用的handleInputChange函数中要操作这个dom元素即可用this.input来操作了
                     />
                     <button onClick={this.handleBtnClick}>提交</button>
                 </div>
-                <ul>
+                <ul ref={(ul) => {this.ul = ul}}> {/*ref使用*/}
                     {this.getTodoItem()}
                 </ul>
                 <Test content = {this.state.inputValue}/>
@@ -69,7 +70,8 @@ class TodoList extends Component {
             )
         })
     }
-    handleInputChange(e) {
+    // handleInputChange(e) {
+    handleInputChange() { // 上面用ref 这个属性后，这个就不用变量e了
         // 3.改变数据， 必须调用this.setState({}) 来修改数据; 
 
 
@@ -83,7 +85,9 @@ class TodoList extends Component {
         //     }
         // })
         //优化2
-        const value = e.target.value;
+        // const value = e.target.value;
+        const value = this.input.value; // 因为上面用了ref属性，这里可以直接用this.input 来操作 上面的input这个dom元素;
+        // 但是不推荐使用这个ref属性; 
         this.setState(() => ({
             inputValue: value
         }))
@@ -105,10 +109,15 @@ class TodoList extends Component {
         //优化
         // setState 可以接收一个prevState 参数 等价于 this.state
         // 这样可以更好的防止用户直接修改this.state 变量; 
+        // setState 是一个异步函数;
         this.setState((prevState) => ({
             list: [...prevState.list, prevState.inputValue],
             inputValue: '',
-        }))
+        }),()=>{
+            console.log(this.ul.querySelectorAll('div').length);
+        }); //2.setSate 提供了第二个参数 当第一个异步函数执行完成后，才执行第二个函数;
+        // 1.因为setState 是异步函数，所以这里获取的div长度是少一个;
+        // console.log(this.ul.querySelectorAll('div').length);
     }
     handleItemDelete(index) {
         // 7.immutable 
