@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import TodoItem from './todoitem';
 import Test from './Test';
+import axios from 'axios';
 
 import './style.css';
 
@@ -46,6 +47,14 @@ class TodoList extends Component {
         );
     }
 
+    componentDidMount(){
+        axios.get('/api/todolist')
+        .then(()=>{
+            console.log('success');
+        })
+        .catch(()=>console.log('error'));
+    }
+
     // 优化4 
     getTodoItem() {
         return this.state.list.map((item, index) => {
@@ -61,7 +70,7 @@ class TodoList extends Component {
                     {/*<li
                         key={index}  //bind(this, paramets...) 4.传递参数
                         onClick={this.handleItemDelete.bind(this, index)}
-                        dangerouslySetInnerHTML={{__html: item}} // 这么写的话， 输入           <h1>hello</h1> 会不转义 直接显示大写的hello了; 这个不推荐 除非非要不        可;
+                        dangerouslySetInnerHTML={{__html: item}} // 这么写的话， 输入           <h1>hello</h1> 会不转义 直接显示大写的hello了; 这个不推荐 除非非要不可;
                         >
                         //{item}
                         </li>*/

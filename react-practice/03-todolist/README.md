@@ -398,8 +398,75 @@ handleInputChange() { // 上面用ref 这个属性后，这个就不用变量e�
 
     }
 ```
+React的生命周期函数
 
+![React生命周期函数](./reactlife.png)
 
+生命周期函数指在某一个时刻组件会自动调用执行的函数; 
+只在页面被页面挂载时执行;
+``` 
+页面即将挂载前执行;
+componentWillMount
+
+页面挂载完成后,自动执行; 
+componentDidMount 
+```
+
+updating 
+```
+组件被更新之前，自动执行;
+shouldComponentUpdate(nextProps, nextState)
+
+组件将要被更新，自动执行; 只在shouldComponentUpdate 返回true 才执行;
+componentWillUpdate
+
+组件更新完成之后，自动执行;
+componentDidUpdate
+
+当一个组件要从父组件接收参数, 只要父组件的render函数被重新执行了，
+子组件的这个生命周期函数就会被执行;
+如果这个组件第一个存在于父组件中，不会执行;
+如果这个组件之前已经存在与父组件中，才会执行;
+componentWillReceiveProps
+```
+
+unmounting
+当组件即将从页面中剔除，自动执行;
+componentWillUnmount 
+
+生命周期函数的使用场景
+- 性能提升;
+- 发送ajax请求;
+
+```jsx
+shouldComponentUpdate(nextProps, nextState){
+    if(nextProps.content !== this.props.content){
+        // 只有更新了content 才去render, 这样提示了子组件的性能;
+        return true;
+    }
+    return false; 
+}
+```
+此外提升React性能的方法还有
+- setState 可以将多次数据更新合并成一次更新; 
+- React diff算法， 利用key值同层比较
+- 在constructor构造函数中绑定函数;
+
+一般会把ajax请求 放在 `componentDidMount` 生命周期函数中;
+componentDidMount 只会在组件被挂载到页面上时执行一次; 
+
+yarn add axios 
+
+```jsx
+import axios from 'axios';
+componentDidMount(){
+        axios.get('/api/todolist')
+        .then(()=>{
+            console.log('success');
+        })
+        .catch(()=>console.log('error'));
+    }
+```
 
 ##### React 特性
 
