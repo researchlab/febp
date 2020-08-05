@@ -8,3 +8,7 @@ Redux 是 JavaScript 状态容器，提供可预测化的状态管理。
 
 Redux 工作流程
 ![redux-flow](./redux-flow.png)
+- Store 存储数据的公共区域; (图书馆管理员)
+- React Components （借书的用户)
+- Action Creators (说的要借什么书的这句话)
+- Reducers (记录本)
