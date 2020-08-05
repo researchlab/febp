@@ -1,0 +1,81 @@
+
+/* .show {
+    opacity:1;
+    transition: all 1s ease-in;
+} */
+
+/* .hide{
+    opacity: 0;
+    transition: all 1s ease-in;
+} */
+
+ /* 定义一个动画 */
+@keyframes hide-item{
+    0% {
+        opacity: 1;
+        color:red;
+    }
+    50%{
+        opacity: 0.5;
+        color:green;
+    }
+    100%{
+        opacity: 0;
+        color:blue;
+    }
+}
+/* 当动画进度到达100%后，效果不会被保存下来，只有在使用动画效果时 加一个 forwards属性 才能事最后的动画效果保存下来; */
+
+.hide{
+    animation: hide-item 2s ease-in forwards;
+}
+
+@keyframes show-item{
+    0% {
+        opacity: 0;
+        color:red;
+    }
+    50%{
+        opacity: 0.5;
+        color:green;
+    }
+    100%{
+        opacity: 1;
+        color:blue;
+    }
+}
+
+.show{
+    animation: show-item 2s ease-in forwards;
+}
+
+/* 入场动画 */
+/* 这里的fade 事className的前缀 */
+.fade-enter, .fade-appear{
+    opacity: 0;
+}
+/* 入场动画第二个时刻，直到入场动画执行完成 */
+.fade-enter-active, .fade-appear-active{
+    opacity: 1;
+    transition: opacity 1s ease-in;
+}
+
+/* 入场动画执行完成之后，执行 */
+.fade-enter-done{
+    opacity: 1;
+    color:red;
+}
+
+/* 出场动画执行的第一个时刻 */
+.fade-exit{
+    opacity: 1;
+}
+
+.fade-exit-active{
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+.fade-exit-done{
+    opacity: 0;
+}
