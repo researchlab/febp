@@ -7,6 +7,7 @@ yarn add antd
 yarn add style-loader css-loader
 
 引入antd css不生效， 解决方案
+
 1.不需要安装babel-plugin-import 插件
 ```
 yarn add babel-plugin-import 
