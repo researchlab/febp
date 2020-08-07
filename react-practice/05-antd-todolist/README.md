@@ -79,3 +79,17 @@ Redux 使用流程
 - store.getState   获取store中所有的数据
 - store.subscribe  订阅store中数据， 当数据变更后 会自动触发订阅函数;
 
+为什么style 中要用双层大括号{{}}
+
+```jsx
+render(){
+        return(
+            <div style={{ marginTop:'10px', marginLeft:'10px'}}>
+        )
+}
+```
+
+react组件jsx，行内style固定写法就是双花括号   
+
+①外层花括号：因为React使用的是JSX语法，JSX语法中嵌入任何js变量、表达式、对象都要用花括号{}扩起来，
+②内层花括号：JSX如果用到行内CSS style样式时，这个行内样式必须是一个js对象，即{background:'theme.background'}是一个对象所以用花括号扩起来。
