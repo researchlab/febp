@@ -21,6 +21,7 @@ redux-thunk 作用
 - store.dispatch(action) 中的action 函数自动就能接收到一个 dispatch的函数参数， 使得action函数内部可以使用这个dispatch函数;
 - redux-thunk 使得异步函数 可以从 react 组件声明周期函数中提炼出来放到actionCreators里面; 
 - 将异步函数提取出来 使得自动化测试会更容易; 
+- 只有用了redux-thunk 中间件 action 才能是一个函数，否则会报错提示action只能是一个对象; 
 
 ```jsx
 export const getTodoList = () =>{
@@ -38,3 +39,8 @@ export const getTodoList = () =>{
     }
 }
 ```
+
+Redux 中间件 解决redux中的异步问题; 
+
+redux-thunk 
+redux-saga  
