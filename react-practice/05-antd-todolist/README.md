@@ -49,3 +49,33 @@ plugins:[
 ```
 > 注意上面的modules 要设置为false, 或者不要设置上面的modules;
 
+yarn add redux 
+
+Redux 设计和使用的三原则
+
+- store 是唯一的; 
+- 只有store能够改变自己的内容;
+- Reducer 必须是纯函数;
+
+> 纯函数指的是，给定固定的输入，就一定会有固定的输出，不会有任何副作用; 
+
+所以reducer 中不能有任何ajax操作，异步操作，time操作; 
+下面这个包含了Date() 所以 固定的输入(state, action) 不会有固定的输出， 
+所以不是纯函数，所以不能作为reducer函数使用; 
+```jsx
+export default (state = defaultState, action)=> {
+    if(action.type === CHANGE_INPUT_VALUE){
+        // deep copy
+        const newState = JSON.parse(JSON.stringify(state));
+        newState.inputValue = Date();
+        return newState;
+    }
+}
+```
+Redux 使用流程 
+
+- createStore  创建 共用数据存储store
+- store.dispatch   分发action 
+- store.getState   获取store中所有的数据
+- store.subscribe  订阅store中数据， 当数据变更后 会自动触发订阅函数;
+
