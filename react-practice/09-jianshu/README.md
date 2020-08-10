@@ -136,7 +136,6 @@ yarn add redux-immutable
 ```jsx
 import { reducer as headerReducer } from '../common/header/store';
 
-
 // export default combineReducers({
 //     header: headerReducer
 // })
@@ -168,4 +167,14 @@ const mapStateToProps = (state) =>{
 
     }
 }
+```
+
+yarn add redux-thunk 
+
+yarn add axios  异步请求; 
+
+通过ref属性获取当前的DOM元素， 从而可以改变其CSS属性;
+
+```jsx
+<i ref={(icon) => {this.spinIcon = icon}} className="iconfont spin">&#xe606;</i>
 ```
