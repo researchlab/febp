@@ -17,7 +17,8 @@ import {
     SearchInfoTitle,
     SearchInfoSwitch,
     SearchInfoItem,
-    SearchInfoList
+    SearchInfoList,
+    HeaderNav
 } from './style';
 
 // 优化1 内容
@@ -54,6 +55,7 @@ class Header extends Component {
         const { focused, list, handleInputFocus, handleInputBlur} = this.props;
         return (
             <HeaderWrapper>
+                <HeaderNav>
                 <Logo />
                 <Nav>
                     <NavItem className='left active'>首页</NavItem>
@@ -82,6 +84,7 @@ class Header extends Component {
                         <Button className='writting'><i className="iconfont">&#xe708;</i>写文章</Button>
                         <Button className='reg'>注册</Button>
                 </Addition>
+                </HeaderNav>
             </HeaderWrapper>
         );
     }

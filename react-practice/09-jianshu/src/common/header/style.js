@@ -3,9 +3,15 @@ import styled from 'styled-components';
 import logoPic from '../../statics/logo.png';  // webpack 会自动从这个路径找到这个图片 帮你打包到当前目录下； 
 
 export const HeaderWrapper = styled.div`
+    border-bottom: 1px solid #f0f0f0;
+`;
+
+export const HeaderNav = styled.div`
     position: relative;
     height: 56px;
-    border-bottom: 1px solid #f0f0f0;
+    margin: 0 auto;
+    min-width: 768px;
+    max-width: 1440px;
 `;
 
 export const Logo = styled.a.attrs({
@@ -67,9 +73,6 @@ export const NavSearch = styled.input.attrs({
     }
     &.focused {
         width: 240px;
-        .iconfont {
-
-        }
     }
     &.slide-enter{
         width: 160px;
