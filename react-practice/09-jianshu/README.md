@@ -128,3 +128,44 @@ const mapStateToProps = (state) =>{
     }
 }
 ```
+
+使用 redux-immutable 统一数据格式; 
+
+yarn add redux-immutable
+
+```jsx
+import { reducer as headerReducer } from '../common/header/store';
+
+
+// export default combineReducers({
+//     header: headerReducer
+// })
+
+// 得到一个immutable对象的state;
+// import { combineReducers } from 'redux-immutable';
+
+// 得到一个js对象的state;
+// import { combineReducers } from 'redux';
+
+const reducer = combineReducers({
+    header: headerReducer
+})
+```
+
+获取immutable对象值
+```jsx
+const mapStateToProps = (state) =>{
+    return {
+        // focused: state.header.focused
+        // state 是一个js对象; 通过.获取属性值;
+        // state.header 是一个immutable 对象;  通过.get获取属性值;
+        // focused: state.header.get('focused') // immutable 对象 只能通过.get('属性名') 获取属性值; 
+
+        // state 变成了一个immutable对象 的使用方式; 
+        // focused: state.get('header').get('focused')
+        // 等价与下面的.getIn(['header','focused']) 意思是 取header 下面的focused的值; 
+        focused: state.getIn(['header','focused'])
+
+    }
+}
+```
