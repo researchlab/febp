@@ -79,6 +79,8 @@ facebook 开源的 immutable.js  生成一个 immutable 对象， 即不可改�
 
 yarn add immutable 
 
+https://github.com/immutable-js/immutable-js
+
 将state对象 转换为 immutable 对象;
 
 ```jsx
