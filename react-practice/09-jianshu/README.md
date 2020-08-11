@@ -178,3 +178,9 @@ yarn add axios  异步请求;
 ```jsx
 <i ref={(icon) => {this.spinIcon = icon}} className="iconfont spin">&#xe606;</i>
 ```
+
+react 路由使用
+
+yarn add react-router-dom
+
+父元素下的子元素 设置了浮动， 则可以设置父元素的overflow:hidden 属性， 作用是触发父元素的BFC, 使得父元素的高度自动适应子元素的高度;
