@@ -13,8 +13,9 @@ import Detail from './pages/detail';
 function App() {
   return (
     <Provider store={store}>
-        <Header />
+        
         <Router>
+        <Header />
         <Switch>
           <Route exact path='/'>   {/* exact 表示完全匹配这个路由 才路由这个组件 */}
             <Home/>

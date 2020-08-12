@@ -4,6 +4,8 @@ import logoPic from '../../statics/logo.png';  // webpack 会自动从这个路�
 
 export const HeaderWrapper = styled.div`
     border-bottom: 1px solid #f0f0f0;
+    background: #fff;
+    
 `;
 
 export const HeaderNav = styled.div`
@@ -14,9 +16,7 @@ export const HeaderNav = styled.div`
     max-width: 1440px;
 `;
 
-export const Logo = styled.a.attrs({
-    href:'/'
-})`
+export const Logo = styled.div`
     position: absolute;
     top:0;
     left:0;

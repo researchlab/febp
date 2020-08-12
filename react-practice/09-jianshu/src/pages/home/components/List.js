@@ -7,6 +7,7 @@ import {
 } from '../style';
 
 import {actionCreators} from '../store';
+import { Link } from 'react-router-dom';
 
 class List extends PureComponent {
     render(){
@@ -16,17 +17,19 @@ class List extends PureComponent {
                 {               
                     articleList.map((item) =>{
                         return (
-                            <ListItem key={item.get('id')}>
-                                <img 
-                                src={item.get('imgUrl')} 
-                                alt={item.get('title')}
-                                className='list-pic'
-                                />
-                                <ListInfo>
-                                    <h3 className="title">{item.get('title')}</h3>
-                                    <p className="desc">{item.get('desc')}</p>
-                                </ListInfo>
-                            </ListItem>
+                            <Link key={item.get('id')} to='/detail'>
+                                <ListItem>
+                                    <img 
+                                    src={item.get('imgUrl')} 
+                                    alt={item.get('title')}
+                                    className='list-pic'
+                                    />
+                                    <ListInfo>
+                                        <h3 className="title">{item.get('title')}</h3>
+                                        <p className="desc">{item.get('desc')}</p>
+                                    </ListInfo>
+                                </ListItem>
+                            </Link> 
                         )
                     }) 
                 }
