@@ -12,12 +12,13 @@ class Download extends Component {
         const { handleMouseEnter, handleMouseLeave } = this.props;
         return (
             <DownloadWrapper
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
+            
             >
                 {this.getDownloadQrCode()}
                 <DownloadDesc 
                 className='aside' 
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
                 >
                 <img 
                 src="https://cdn2.jianshu.io/assets/web/download-index-side-qrcode-4130a7a6521701c4cb520ee6997d5fdb.png"
