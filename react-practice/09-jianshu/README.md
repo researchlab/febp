@@ -191,3 +191,18 @@ PureComponent 底层自己实现了一个shouldComponentUpdate 的方法
 这样当 store 与 当前组件无关时， 则 不需要重新 render了， 大大提升了组件的性能; 
 这个有一个前提 当前框架用了 immutable.js 来管理组件的数据; 
 所以建议  PureComponent 与 immutable.js 配合使用; 
+
+当组件中使用了如下connect组件之后，发现组件的match, location,history属性找不到了
+```jsx
+import { connect } from 'react-redux';
+export default connect(mapState, mapDispatch)(Detail);
+```
+那么可以通过 React-router 提供的withRouter方法将其解构出来， 将代码改成如下即可, 
+```diff
+import { connect } from 'react-redux';
++ import { withRouter } from 'react-router-dom';
+- export default connect(mapState, mapDispatch)(Detail);
++ export default connect(mapState, mapDispatch)(withRouter(Detail));
+```
+
+- [React-router中解决match, location和history属性找不到的问题](https://blog.csdn.net/weixin_43080554/article/details/99293319)
