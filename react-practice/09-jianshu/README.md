@@ -206,3 +206,80 @@ import { connect } from 'react-redux';
 ```
 
 - [React-router中解决match, location和history属性找不到的问题](https://blog.csdn.net/weixin_43080554/article/details/99293319)
+
+##### ReactJS 的5种路由模式
+
+1、BrowserRouter：浏览器的路由方式，也就是在开发中最常使用的路由方式
+
+2、HashRouter：在路径前加入#号成为一个哈希值，Hash模式的好处是，再也不会因为我们刷新而找不到我们的对应路径
+
+3、MemoryRouter：不存储history，所有路由过程保存在内存里，不能进行前进后退，因为地址栏没有发生任何变化
+
+4、NativeRouter：经常配合ReactNative使用，多用于移动端
+
+5、StaticRouter：设置静态路由，需要和后台服务器配合设置，比如设置服务端渲染时使用
+
+
+##### React 路由三种传参方式，一个注意事项
+
+方式一: 动态路由
+```jsx
+通过params
+    1.路由表中      
+          <Route path=' /sort/:id '  component={Sort}></Route>　　　　　　　
+    2.Link处        
+      HTML方式
+             <Link to={ ' /sort/ ' + ' 2 ' }  activeClassName='active'>XXXX</Link> 　　　　　
+      JS方式
+            this.props.history.push(  '/sort/'+'2'  )
+    3.Sort页面       
+           通过  this.props.match.params.id  就可以接受到传递过来的参数（id）
+    4.请求转发
+           axios.get('/api/detail.json?id='+id)
+```
+> 通过设置link的path属性，进行路由的传参，当点击link标签的时候，会在上方的url地址中显示传递的整个url
+
+> 因为传参能够被用户看见，传递获取比较麻烦，所以不推荐
+
+
+方式二: query 传参
+```jsx
+通过query
+        前提：必须由其他页面跳过来，参数才会被传递过来
+        注：不需要配置路由表。路由表中的内容照常：<Route path='/sort' component={Sort}></Route>
+    1.Link处      
+      HTML方式
+        <Link to={{ path : ' /sort ' , query : { name : 'sunny' }}}>
+      JS方式
+        this.props.history.push({ path : '/sort' ,query : { name: ' sunny'} })
+    2.sort页面     
+          this.props.location.query.name
+```
+>
+
+
+方式三: state 传参 
+```jsx
+通过state
+        同query差不多，只是属性不一样，而且state传的参数是加密的，query传的参数是公开的，在地址栏
+    1.Link 处      
+      HTML方式：
+            <Link to={{ path : ' /sort ' , state : { name : 'sunny' }}}> 
+                            　　
+      JS方式：
+        this.props.history.push({ pathname:'/sort',state:{name : 'sunny' } })
+                          　　  
+    2.sort页面       
+        this.props.location.state.name
+```
+> state传参为隐式路由传参, 传参信息不暴露在url中;
+
+> 推荐使用，比较安全，获取传递参数都比较方便;
+
+一个注意事项
+
+想要在某个子组件中获取路由的参数，必须得使用路由中的route标签的子组件才能被绑定上路由的参数。
+
+为了解决不通过route标签绑定的子组件获取路由参数的问题，需要使用withRouter
+
+参考 [React-router中解决match, location和history属性找不到的问题](https://blog.csdn.net/weixin_43080554/article/details/99293319)

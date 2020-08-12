@@ -17,8 +17,8 @@ function App() {
           <Route exact path='/'>   {/* exact 表示完全匹配这个路由 才路由这个组件 */}
             <Home/>
           </Route>
-          <Route path='/detail'>
-            <Detail/>
+          <Route  path='/detail' component={Detail}>
+            {/* <Detail/> */}
           </Route>
         </Switch>
         </Router>
