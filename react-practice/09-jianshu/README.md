@@ -184,3 +184,10 @@ react 路由使用
 yarn add react-router-dom
 
 父元素下的子元素 设置了浮动， 则可以设置父元素的overflow:hidden 属性， 作用是触发父元素的BFC, 使得父元素的高度自动适应子元素的高度;
+
+Component 与 PureComponent 的区别
+PureComponent 底层自己实现了一个shouldComponentUpdate 的方法
+它自己会判断当store 发生变化时 当前组件是否要重新render 了; 
+这样当 store 与 当前组件无关时， 则 不需要重新 render了， 大大提升了组件的性能; 
+这个有一个前提 当前框架用了 immutable.js 来管理组件的数据; 
+所以建议  PureComponent 与 immutable.js 配合使用; 
