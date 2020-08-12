@@ -105,14 +105,16 @@ export const DownloadWrapper = styled.div`
 
 export const DownloadQRCode = styled.div`
     text-align: center;
-    margin-top: -115px;
+    margin-top: -125px;
     margin-bottom: -10px;
     img{
         border: 1px solid #999;
         border-radius: 6px;
+        padding: 5px;
         background-color: #fff;
         with: 120px;
         height: 120px;
+        box-shadow: 0 0 8px rgba(0,0,0,.2);
     }
 `;
 
@@ -162,12 +164,26 @@ export const RecommenderWrapper = styled.div`
     width: 280px;
 `;
 
-export const RecommenderItem = styled.div`
+// export const RecommenderItem = styled.div`
+//     with: 280px;
+//     height: 50px;
+//     cursor: pointer;
+//     margin-bottom: 6px;
+//     border-radius: 4px;
+//     border: 0px;
+//     background: url(${(props) => props.imgUrl});
+//     background-size: contain;
+// `;
+
+// 写法2
+export const RecommenderItem = styled.div.attrs({
+    background: props => "url("+props.imgUrl+")"
+})`
     with: 280px;
     height: 50px;
+    cursor: pointer;
     margin-bottom: 6px;
     border-radius: 4px;
     border: 0px;
-    background: url(${(props) => props.imgUrl});
     background-size: contain;
 `;
