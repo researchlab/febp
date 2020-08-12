@@ -164,26 +164,13 @@ export const RecommenderWrapper = styled.div`
     width: 280px;
 `;
 
-// export const RecommenderItem = styled.div`
-//     with: 280px;
-//     height: 50px;
-//     cursor: pointer;
-//     margin-bottom: 6px;
-//     border-radius: 4px;
-//     border: 0px;
-//     background: url(${(props) => props.imgUrl});
-//     background-size: contain;
-// `;
-
-// 写法2
-export const RecommenderItem = styled.div.attrs({
-    background: props => "url("+props.imgUrl+")"
-})`
+export const RecommenderItem = styled.div`
     with: 280px;
     height: 50px;
     cursor: pointer;
     margin-bottom: 6px;
     border-radius: 4px;
     border: 0px;
+    background: url(${(props) => props.imgUrl});
     background-size: contain;
 `;
