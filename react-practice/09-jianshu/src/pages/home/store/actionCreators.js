@@ -11,7 +11,8 @@ const changeHomeData = (result) => ({
     topicList: result.topicList,
     articleList: result.articleList,
     recommendList: result.recommendList
-})
+});
+
 export const getHomeInfo = () => {
     return (dispatch) => {
         axios.get('/api/home')
@@ -24,3 +25,26 @@ export const getHomeInfo = () => {
         });
     }
 }
+
+const addArticleList = (result,nextPage) => ({
+    type: constants.ADD_ARTICALE_DATA,
+    articleList: result.articleList,
+    nextPage
+})
+export const getMoreList = (page) => {
+    return (dispatch) => {
+        axios.get('/api/homelist?page=' + page)
+        .then((res)=>{
+            const result = res.data.data;
+            dispatch(addArticleList(result, page+1));
+        })
+        .catch(()=>{
+            console.log('error');
+        });
+    }
+}
+
+export const toggleTopShow = (show) => ({
+    type: constants.CHANGE_SCROLL_SHOW,
+    show
+})

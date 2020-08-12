@@ -2,12 +2,15 @@ import React , { Component } from 'react';
 import { connect } from 'react-redux';
 import {
     ListItem,
-    ListInfo
+    ListInfo,
+    LoadMore
 } from '../style';
+
+import {actionCreators} from '../store';
 
 class List extends Component {
     render(){
-        const { articleList } = this.props;
+        const { articleList, getMoreList, page } = this.props;
         return (
             <div>
                 {               
@@ -27,6 +30,7 @@ class List extends Component {
                         )
                     }) 
                 }
+                <LoadMore onClick={()=> getMoreList(page)}>阅读更多</LoadMore>
             </div>      
         )
     }
@@ -40,6 +44,13 @@ class List extends Component {
 
 // es6 简写， 当只返回一个对象时， 去掉return 用() 包裹一下即可; 
 const mapStatetoProps = (state) => ({
-        articleList: state.getIn(['home','articleList'])
+        articleList: state.getIn(['home','articleList']),
+        page: state.getIn(['home','articlePage'])
 })
-export default connect(mapStatetoProps,null)(List);
+
+const mapDispatchtoProps = (dispatch) => ({
+    getMoreList(page){
+        dispatch(actionCreators.getMoreList(page));
+    }
+})
+export default connect(mapStatetoProps,mapDispatchtoProps)(List);
