@@ -3,9 +3,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Header from './common/header/index';
-
 import store from './store/index';
-
 import Home from './pages/home';
 import Detail from './pages/detail';
 
@@ -13,7 +11,6 @@ import Detail from './pages/detail';
 function App() {
   return (
     <Provider store={store}>
-        
         <Router>
         <Header />
         <Switch>

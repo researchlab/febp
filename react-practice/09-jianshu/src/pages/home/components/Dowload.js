@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {connect } from 'react-redux';
 import {
     DownloadWrapper,
@@ -7,7 +7,7 @@ import {
 } from '../style';
 import { setQrcode } from '../store/actionCreators';
 
-class Download extends Component {
+class Download extends PureComponent {
     render () {
         const { handleMouseEnter, handleMouseLeave } = this.props;
         return (
