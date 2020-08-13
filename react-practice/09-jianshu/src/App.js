@@ -6,7 +6,7 @@ import Header from './common/header/index';
 import store from './store/index';
 import Home from './pages/home';
 import Detail from './pages/detail';
-
+import Login from './pages/login';
 
 function App() {
   return (
@@ -17,7 +17,8 @@ function App() {
           <Route exact path='/'>   {/* exact 表示完全匹配这个路由 才路由这个组件 */}
             <Home/>
           </Route>
-          <Route  path='/detail' component={Detail}>
+          <Route exact path='/login' component={Login}></Route>
+          <Route  exact path='/detail/:id' component={Detail}>
             {/* <Detail/> */}
           </Route>
         </Switch>
