@@ -4,3 +4,6 @@ export const CHANGE_LIST = 'header/CHANGE_LIST';
 export const MOUSE_ENTER = 'header/MOUSE_ENTER';
 export const MOUSE_LEAVE = 'header/MOUSE_LEAVE';
 export const CHANGE_PAGE = 'header/CHANGE_PAGE';
+export const HOME_PAGE = 'header/HOME_PAGE';
+export const DOWNLOAD_PAGE ='header/DOWNLOAD_PAGE';
+export const CHANGE_PAGE_TYPE ='header/CHANGE_PAGE_TYPE';

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import { actionCreators }  from './store';
 import { actionCreators as loginActionCreators } from '../../pages/login/store';
+import { constants } from './store';
 import { Link } from 'react-router-dom';
 import { 
     HeaderWrapper,
@@ -53,7 +54,7 @@ import {
 //优化2: 将函数组件 改成 普通组件 
 class Header extends PureComponent {
     render(){
-        const { focused, list, login, handleInputFocus, handleInputBlur,logout} = this.props;
+        const { focused, list, login, pageType, handleInputFocus, handleInputBlur,logout} = this.props;
         return (
             <HeaderWrapper>
                 <HeaderNav>
@@ -61,8 +62,16 @@ class Header extends PureComponent {
                     <Logo />
                 </Link>
                 <Nav>
-                    <NavItem className='left active'>首页</NavItem>
-                    <NavItem className='left'>下载App</NavItem>
+                    <Link to='/'>
+                        <NavItem 
+                        className={ pageType === constants.HOME_PAGE ? 'left active': 'left'
+                        }>首页</NavItem>
+                    </Link>
+                    <Link to='/download'>
+                    <NavItem 
+                    className={pageType === constants.DOWNLOAD_PAGE ? 'left active': 'left'
+                    }>下载App</NavItem>
+                    </Link>
                     {
                         login ? <NavItem onClick={logout} className='right'>退出</NavItem> :
                         <Link to='/login'><NavItem className='right'>登录</NavItem></Link>
@@ -222,7 +231,8 @@ const mapStateToProps = (state) =>{
         page: state.getIn(['header','page']),
         mouseIn: state.getIn(['header','mouseIn']),
         totalPage: state.getIn(['header','totalPage']),
-        login: state.getIn(['login','login'])
+        login: state.getIn(['login','login']),
+        pageType: state.getIn(['header','pageType'])
     }
 }
 

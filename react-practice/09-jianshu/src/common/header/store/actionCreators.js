@@ -43,3 +43,8 @@ const changeList = (data) => ({
     data: fromJS(data),
     totalPage: Math.ceil(data.length /10)
 });
+
+export const changePageType = (pageType) =>({
+    type: constants.CHANGE_PAGE_TYPE,
+    pageType
+});

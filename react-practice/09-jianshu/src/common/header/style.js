@@ -5,7 +5,6 @@ import logoPic from '../../statics/logo.png';  // webpack 会自动从这个路�
 export const HeaderWrapper = styled.div`
     border-bottom: 1px solid #f0f0f0;
     background: #fff;
-    z-index: 999;
 `;
 
 export const HeaderNav = styled.div`
@@ -47,9 +46,15 @@ export const NavItem = styled.div`
         float:right;
         color: #969696;
     }
+    &:hover{
+        background:#eee;
+        color: #555;
+    }
     &.active{
         color:#ea6f5a;
+        background:none;
     }
+    
 
 `;
 

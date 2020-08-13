@@ -7,7 +7,10 @@ const defaultState = fromJS({
    recommendList: [],
    qrCode: false,
    articlePage: 1,
-   showScroll: false
+   showScroll: false,
+   writerList: [],
+   writerPage: 1,
+   writerTotalPage: 1
 });
 
 const changeHomeData = (state, action) => {
@@ -38,6 +41,13 @@ export default (state = defaultState, action) => {
             return addArticleList(state, action);
         case constants.CHANGE_SCROLL_SHOW: 
             return state.set('showScroll', action.show);
+        case constants.INIT_WRITER_LIST:
+            return state.merge({
+                writerList:fromJS(action.writerList),
+                writerTotalPage: action.totalPage,
+            });
+        case constants.CHANGE_WRITER_PAGE:
+            return state.set('writerPage',action.writerPage);
         default:
             return state;
     }

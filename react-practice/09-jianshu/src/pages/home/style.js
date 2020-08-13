@@ -62,7 +62,7 @@ export const ListItem = styled.div`
         float: right;
         width: 125px;
         height:100px;
-        border-radius: 10px;
+        border-radius: 5px;
     }
 `;
 
@@ -75,6 +75,9 @@ export const ListInfo = styled.div`
         font-weight: bold;
         margin-bottom: 10px;
         color: #333;
+        &:hover{
+            text-decoration: underline; color; #333;
+        }
     }
     .desc {
         line-height: 24px;
@@ -193,10 +196,105 @@ export const BackTop = styled.div`
     position: fixed;
     right: 100px;
     bottom: 100px;
-    with: 60px;
-    height: 60px;
-    line-height: 60px;
+    with: 70px;
+    height: 50px;
+    line-height: 50px;
     text-align: center;
-    font-size: 15px;
+    font-size: 12px;
     border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 5px;
+    &:hover{
+        box-shadow: 0 0 8px rgba(0,0,0,.2);
+        background: #eee;
+    }
+    
+`;
+
+export const WriterWrapper = styled.div`
+    width: 280px;
+`;
+
+export const WriterRecommend = styled.span`
+    font-size: 14px;
+    color: #969696;
+`;
+
+export const WriterSwitch = styled.a`
+    float: right;
+    display: inline-block;
+    font-size: 14px;
+    color: #969696;
+    cursor: pointer;
+    vertical-align:middle;
+    i{
+        margin-right: 5px;
+    }
+    .spin{
+        display: block;
+        float: left;
+        font-size: 13px;
+        margin-right: 3px;
+        transition: all .2s ease-in;
+        transform-origin: center center;
+    }
+`;
+
+export const WriterInfo = styled.div`
+    width: 280px;
+    margin-top: 15px;
+    line-height: 20px;
+    position: relative;
+    img{
+    width: 48px;
+    height: 48px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    vertical-align: middle;
+    }
+    a{
+        cursor: pointer;
+    }
+    .name{
+        padding-top: 5px;
+        margin-right: 60px;
+        font-size: 14px;
+        display: inline-block;
+        color: #333;
+        text-decoration:none;
+        vertical-align: 10px;
+        margin-left: 10px;
+    }
+    p{
+        margin-top: 2px;
+        font-size: 12px;
+        color: #969696;
+        position: absolute;
+        margin-top: -23px;
+        margin-left: 60px;
+    }
+    .follow{
+        float: right;
+        margin-top: 5px;
+        padding: 0;
+        font-size: 13px;
+        color: #42c02e;
+        text-decoration: none;
+    }
+`;
+
+export const WriterMore = styled.a`
+    display: block;
+    padding: 7px 7px 7px 12px;
+    left: 0;
+    width: 259px;
+    font-size: 13px;
+    color: #787878;
+    background-color: #f7f7f7;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    margin-top: 15px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 50px;
 `;

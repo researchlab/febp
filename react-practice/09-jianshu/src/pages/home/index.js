@@ -9,6 +9,8 @@ import Download from './components/Dowload';
 import { connect } from 'react-redux';
 
 import { actionCreators } from './store';
+import { actionCreators as headerActionCreators } from '../../common/header/store';
+import { constants as headerConstants } from '../../common/header/store';
 
 import { BackTop } from './style';
 
@@ -47,7 +49,9 @@ class Home extends PureComponent {
         )
     }
     componentDidMount(){
+        this.props.changePageType(headerConstants.HOME_PAGE);
         this.props.changeHomeData();
+        this.props.getWriterList();
         this.bindEvents();
     }
     handleScrollTop(){
@@ -55,6 +59,7 @@ class Home extends PureComponent {
     }
     // 在组件解绑后 一定要记得销毁绑定在组件上的事件;
     componentWillUnmount(){
+        this.props.changePageType('');
         window.removeEventListener('scroll', this.props.changeScrollTopShow);
     }
     bindEvents(){
@@ -64,7 +69,8 @@ class Home extends PureComponent {
 }
 
 const mapState = (state) => ({
-    showScroll: state.getIn(['home','showScroll'])
+    showScroll: state.getIn(['home','showScroll']),
+
 })
 
 const mapDispatch = (dispatch) => ({
@@ -77,6 +83,12 @@ const mapDispatch = (dispatch) => ({
         }else {
             dispatch(actionCreators.toggleTopShow(false));
         }
+    },
+    changePageType(pageType){
+        dispatch(headerActionCreators.changePageType(pageType));
+    },
+    getWriterList(){
+        dispatch(actionCreators.getWriterList());
     }
 });
 export default connect(mapState, mapDispatch)(Home);

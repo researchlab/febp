@@ -10,7 +10,8 @@ const defaultState = fromJS({
     mouseIn: false,
     list: [],
     page: 1,
-    totalPage: 1
+    totalPage: 1,
+    pageType: ''
 });
 
 // 优化: switch 替换 if 
@@ -30,8 +31,10 @@ export default (state = defaultState, action) =>{
             return state.set('mouseIn',true);
         case constants.MOUSE_LEAVE:
             return state.set('mouseIn',false);
-        case constants.CHANGE_PAGE:
+        case constants.CHANGE_PAGE:        
             return state.set('page',action.page);
+        case constants.CHANGE_PAGE_TYPE:
+            return state.set('pageType',action.pageType);
         default:
             return state;
     }

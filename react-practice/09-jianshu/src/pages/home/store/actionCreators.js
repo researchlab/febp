@@ -47,4 +47,28 @@ export const getMoreList = (page) => {
 export const toggleTopShow = (show) => ({
     type: constants.CHANGE_SCROLL_SHOW,
     show
+});
+
+const initWriterList = (writerList) => ({
+    type: constants.INIT_WRITER_LIST,
+    totalPage: Math.ceil(writerList.length/5),
+    writerList
+});
+
+export const getWriterList = () => {
+    return (dispatch) => {
+        axios.get('/api/writerlist')
+        .then((res)=>{
+            const result = res.data.data;
+            dispatch(initWriterList(result));
+        })
+        .catch(()=>{
+            console.log('api/writerlist request error');
+        })
+    }
+};
+
+export const changeWriterPage = (writerPage) => ({
+    type: constants.CHANGE_WRITER_PAGE,
+    writerPage 
 })
