@@ -283,3 +283,16 @@ import { connect } from 'react-redux';
 为了解决不通过route标签绑定的子组件获取路由参数的问题，需要使用withRouter
 
 参考 [React-router中解决match, location和history属性找不到的问题](https://blog.csdn.net/weixin_43080554/article/details/99293319)
+
+##### 异步组件
+
+[react-loadable](https://github.com/jamiebuilds/react-loadable)
+
+异步组件可以实现按需加载页面js, 如打开首页时只加载首页相关的js;
+
+yarn add react-loadable
+
+前端打包
+
+npm run build 
+
