@@ -7,6 +7,7 @@ import store from './store/index';
 import Home from './pages/home';
 import Detail from './pages/detail';
 import Login from './pages/login';
+import Write from './pages/write';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Home/>
           </Route>
           <Route exact path='/login' component={Login}></Route>
+          <Route exact path='/write' component={Write}></Route>
           <Route  exact path='/detail/:id' component={Detail}>
             {/* <Detail/> */}
           </Route>

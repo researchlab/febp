@@ -9,6 +9,7 @@ import {
 import { actionCreators } from './store';
 
 class Detail extends PureComponent {
+    
     render(){
         const { title, content }  = this.props;
         return (
@@ -18,6 +19,7 @@ class Detail extends PureComponent {
             </DetailWrapper>
         )
     }
+
     componentDidMount(){
         this.props.getDetail(this.props.match.params.id);
     }
@@ -26,10 +28,12 @@ class Detail extends PureComponent {
 const mapState = (state) => ({
     title: state.getIn(['detail','title']),
     content: state.getIn(['detail','content'])
-})
+});
+
 const mapDispatch = (dispatch) => ({
     getDetail(id){
         dispatch(actionCreators.getDetail(id));
     }
-})
+});
+
 export default connect(mapState, mapDispatch)(withRouter(Detail));

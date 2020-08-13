@@ -108,7 +108,7 @@ export const Button = styled.div`
     &.reg{
         color: #ec6149;
     }
-    &.writting{
+    &.writing{
         color: #fff;
         background: #ec6149;
     }
