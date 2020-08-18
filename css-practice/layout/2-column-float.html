@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 column float layout</title>
+    <style>
+        .parent{
+            overflow: hidden;
+            zoom:1;
+            border: 1px solid red;
+        }
+        .left{
+            float: left;
+            margin-right: 20px;
+            border: 1px solid green;
+        }
+        .right{
+            overflow: hidden;
+            zoom:1;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="left">
+            <p>left</p>
+            <p>left.left</p>
+        </div>
+        <div class="right">
+            <p>right</p>
+            <p>right</p>
+            <p>right</p>
+            <p>right</p>
+        </div>
+    </div>
+</body>
+</html>
