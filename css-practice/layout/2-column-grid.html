@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 column grid layout</title>
+    <style>
+        .parent{
+           display:grid;
+           grid-template-columns: auto 1fr;
+           grid-gap:20px;
+           border: 1px solid orange; 
+        }
+        .right{
+            border: 1px solid red;
+        }
+        .left{
+            border: 1px solid green;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="left">
+            <p>left</p>
+        </div>
+        <div class="right">
+            <p>right</p>
+        </div>
+    </div>
+</body>
+</html>
