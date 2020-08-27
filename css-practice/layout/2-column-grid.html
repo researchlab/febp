@@ -6,8 +6,17 @@
     <title>2 column grid layout</title>
     <style>
         .parent{
-           display:grid;
+           /* display:grid指定一个容器为网格布局 */
+           display:grid; 
+           /* 
+           grid-template-columns：用来指定行的宽度
+           grid-template-rows：用来指定行的高度
+           为了方便表示比例关系，网格提供了fr关键字（fraction的缩写，意为“片段”）
+           如果两列的宽度分别为1fr和2fr，就表示后者是前者的2倍 */
            grid-template-columns: auto 1fr;
+           /* grid-row-gap：设置行与行之间的间隔
+           grid-colunm-gap：设置列于列之间的间隔
+           grid-gap  是上来两个的合并 */
            grid-gap:20px;
            border: 1px solid orange; 
         }
