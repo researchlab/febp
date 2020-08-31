@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 column by table layout</title>
+    <style>
+        .left-center-right{
+            display:table;
+            height: 150px;
+            width: 100%;
+        }
+        .left-center-right>div{
+            display:table-cell;
+        }
+        .left{
+            width:300px;
+            background:red;
+        }
+        .center{
+            background:yellow;
+        }
+        .right{
+            width:300px;
+            background:blue;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>三栏布局</h1>
+        <article class="left-center-right">
+            <div class="left">left</div>
+            <div class="center">
+                <h2>表格布局解决方案</h2>
+                <p>表格布局的兼容性很好，在 flex 布局不兼容的时候，可以尝试表格布局。当内容溢出时会自动撑开父元素。</p>
+                <p>表格布局也是有缺陷:① 无法设置栏边距；② 对 seo 不友好；③ 当其中一个单元格高度超出的时候，两侧的单元格也是会跟着一起变高的，然而有时候这并不是我们想要的效果。</p>
+            </div>
+            <div class="right">right</div>
+        </article>
+    </section>
+</body>
+</html>
