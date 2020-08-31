@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 column by grid layout</title>
+    <style>
+        .left-center-right{
+            display:grid;
+            width:100%;
+            grid-template-columns: 300px auto 300px;
+            grid-template-rows: 150px;
+        }
+        .left{
+            background:red;
+        }
+        .center{
+            background:yellow;
+        }
+        .right{
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>三栏布局</h1>
+        <article class="left-center-right">
+            <div class="left">left</div>
+            <div class="center">
+                <h2>网格布局解决方案</h2>
+            </div>
+            <div class="right">right</div>
+        </article>
+    </section>
+</body>
+</html>
