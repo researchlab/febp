@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>CSS 居中</title>
+    <style>
+        body>div{
+            margin:20px auto;
+        }
+        .view1_1{
+            text-align:center;
+            height:30px;
+            background:yellow;
+        }
+        .view1_2{
+            width: 250px;
+            margin: 0 auto;
+            background:red;
+        }
+        .parent{
+            height:100px;
+            width:300px;
+            position:relative;
+            background:yellow;
+        }
+        .son{
+            position:absolute;
+            left:50%;
+            transform: translateX(-50%); /*自身宽度一半, 等同于margin-left:-(width/2)*/
+            height:30px;
+            width:30px;
+            background:orangered;
+        }
+        .son1{
+            position:absolute;
+            left:50%;
+            top:30px;
+            /* margin-left: -15px; */
+            height:30px;
+            width:30px;
+            background: yellowgreen;
+        }
+        .view1_3{
+            display:flex;
+            background:olivedrab;
+            justify-content: center;
+        }
+        .view2_1{
+            height:50px;
+            line-height:50px;
+            background:greenyellow;
+        }
+
+        .view2_2{
+            height: 60px;
+            /*元素在页面呈现为5行, 则line-height的值为height/5 */
+            line-height: 30px;
+            background:red;
+        }
+        .view2_3{
+            height:100px;
+            width:100px;
+            border: 1px solid #000;
+            position:relative;
+        }
+        .view2_3_1{
+            width:50px;
+            height:50px;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            border: 1px solid red;
+        }
+        .view2_4{
+            display:table-cell;
+            vertical-align: middle;
+            
+            border: 1px solid red;
+            height:50px;
+            width:50px;
+        }
+        .view2_4_1{
+            border:1px solid yellow;
+            width:25px;
+            height:25px;
+            background:yellowgreen;
+        }
+        .view2_5{
+            height:100px;
+            position:relative;
+            background:yellow;
+        }
+        .view2_5_1{
+            position:absolute;
+            top:50%; /*父元素高度的一半，这里等同于top:50px; */
+            transform: translateY(-50%); /*自身高度一半;*/
+            height:50px;
+            width:50px;
+            background:red;
+        }
+        .view2_5_2{
+            position:relative;
+
+            height:100px;
+            background:red;
+        }
+        .view2_5_2_1{
+            position:absolute;
+            margin:auto 0;
+            top:0;
+            bottom:0;
+
+            height:20px;
+            width:20px;
+            background:yellow;
+
+        }
+        .view2_6_1{
+            display:flex;
+            align-items:center;
+            height:100px;
+            background:yellow;
+        }
+        .view2_6_1_1{
+            height:20px;
+            width:20px;
+            background:red;
+        }
+        .view2_6_2{
+            display:flex;
+            height:100px;
+            background:red;
+        }
+        .view2_6_2_1{
+            align-self: center;
+            height:20px;
+            width:20px;
+            background:yellow;
+        }
+        .view2_6_3{
+            display:flex;
+            height:100px;
+            background:yellowgreen;
+        }
+        .view2_6_3_1{
+            margin:auto 0;
+            height:20px;
+            width:20px;
+            background:red;
+        }
+        .view2_6_4{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            height:100px;
+            background:yellow;
+        }
+        .view2_6_4_1{
+            height:20px;
+            width:20px;
+            background:orangered;
+        }
+    </style>
+</head>
+<body>
+    <div class="view1_1">1.1、文本/行内元素/行内块级元素 [文字水平居中]</div>
+
+    <div class="view1_2">1.2、单个块级元素 [div水平居中]</div>
+    1.3、绝对定位
+    <div class="parent">
+        <div class="son"></div>
+        <div class="son1"></div>
+    </div>
+
+    <div class="view1_3">
+        1.4、flex [文字水平居中]
+    </div>
+    <div class="view2_1">
+        2.1、单行文本/行内元素/行内块级元素 [文字垂直居中]
+    </div>
+
+    <div class="view2_2">
+        2.2、多行文本/行内元素/行内块级元素<br/>
+        2.2、多行文本/行内元素/行内块级元素
+    </div>
+    2.3、图片
+    <div class="view2_3">
+        <img class="view2_3_1" src="../../assets/3d1.png"/>
+    </div>
+    2.4、单个块级元素
+    <div class="view2_4">
+        <div class="view2_4_1"></div>
+    </div>
+    2.5、绝对定位
+    <div class="view2_5">
+        <div class="view2_5_1"></div>
+    </div>
+
+    <div class="view2_5_2">
+        <div class="view2_5_2_1"></div>
+    </div>
+    
+    2.6、flex
+    <div class="view2_6_1">
+        <div class="view2_6_1_1"></div>
+    </div>
+
+    <div class="view2_6_2">
+        <div class="view2_6_2_1"></div>
+    </div>
+
+    <div class="view2_6_3">
+        <div class="view2_6_3_1"></div>
+    </div>
+
+    <div class="view2_6_4">
+        <div class="view2_6_4_1"></div>
+    </div>
+</body>
+</html>
