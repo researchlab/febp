@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 column by margin-right</title>
+    <style>
+        .left{
+            width:200px;
+            height:100px;
+            background: #abcdef;
+            float:left;
+            margin-right: -200px; /*如果不设置负右外边距，.warp会被挤到下一行；设置多大呢？绝对值大于等于左边栏目宽度即可 */
+        }
+        .wrap{
+            width:100%;
+            height:100px;
+            background:#777;
+        }
+        .main{
+            margin-left:200px;
+            background:orange;
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="left"></div>
+    <div class="wrap">
+        <div class="main"></div>
+    </div>
+</body>
+</html>
