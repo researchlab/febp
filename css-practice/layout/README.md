@@ -66,3 +66,9 @@ float情况下
 
 - 浮动的框可以向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止。
 - 由于浮动框不在文档的普通流中，所以文档的普通流中的块框表现得就像浮动框不存在一样。
+
+3.flexbox三栏布局
+
+- [3-column-flexbox](./3-column-flexbox.html)
+
+flexbox三栏布局解决了position:absolute和float布局的不足，是比较完全的解决方案，目前移动端布局也采用flexbox布局;
