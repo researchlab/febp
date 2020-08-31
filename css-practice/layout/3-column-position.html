@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 column position</title>
+    <style>
+        .left-center-right>div{
+            position: absolute;
+        }
+        .left-center-right .left{
+            left:0;
+            width:300px;
+            background:red;
+        }
+        .left-center-right .center{
+            right: 300px;
+            left:300px;
+            background: yellow;
+        }
+        .left-center-right .right{
+            right: 0px;
+            width: 300px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>三栏布局</h1>
+        <article class="left-center-right">
+            <div class="left">left</div>
+            <div class="center">
+                <h2>绝对定位解决方案</h2>
+            </div>
+            <div class="right">right</div>
+        </article>
+    </section>
+</body>
+</html>
