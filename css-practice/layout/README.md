@@ -48,8 +48,13 @@
 
 左侧固定，右侧自适应布局（float + margin）
 
-- [2-cloumn-margin-left](./2-column-margin-left.html)
+- [2-column-margin-left](./2-column-margin-left.html)
+
 左侧左浮动，右侧设置margin-left
+
+- [2-column-margin-right](./2-column-margin-right.html)
+
+利用浮动和负外边距来进行左边固定右边自适应的布局
 
 
 2.Flexbox 布局
@@ -67,11 +72,23 @@ link
 
 > 中间列自适应宽度，旁边两侧固定宽度，实现三栏布局有多种方式
 
+> 左中右布局的实现由很多种，大体可分为传统的浮动+margin和绝对定位+margin，现代比较“潮”的flex弹性盒子布局，以及科技含量更高的Grid布局。
+
 1.浮动布局
 
 > 浮动布局的优点就是比较简单，兼容性也比较好。但浮动布局是有局限性的，浮动元素脱离文档流，要做清除浮动，这个处理不好的话，会带来很多问题，比如父容器高度塌陷等。
 
 - [3-column-float](./3-column-float.html)
+  
+- [3-column-float-margin](./3-column-float-margin.html)
+
+> float + margin, 左栏左浮动，右栏右浮动，主体直接放后面，就实现了自适应三栏布局。这种布局需要注意主体main标签必须放在最后，左右随意，一定要注意div书写的顺序。
+
+- [3-column-float-margin-left](./3-column-float-margin-left.html)
+
+> 浮动+margin负值法, 
+
+首先，中间的主体要使用双层标签。外层div宽度100%显示，并且浮动，内层div为真正的主体内容，含有左右210像素的margin值。左栏与右栏都是采用margin负值定位的，左栏左浮动，margin-left为-100%，由于前面的div宽度100%与浏览器，所以这里的-100% margin值正好使左栏div定位到了页面的左侧；右侧栏也是左浮动，其margin-left也是负值，大小为其本身的宽度即200像素。
 
 2.绝对定位布局
 
@@ -91,11 +108,25 @@ float情况下
 - 浮动的框可以向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止。
 - 由于浮动框不在文档的普通流中，所以文档的普通流中的块框表现得就像浮动框不存在一样。
 
+- [3-column-position-margin](./3-column-position-margin.html)
+
+
 3.flexbox三栏布局
 
 - [3-column-flexbox](./3-column-flexbox.html)
 
 flexbox三栏布局解决了position:absolute和float布局的不足，是比较完全的解决方案，目前移动端布局也采用flexbox布局;
+
+![flexbox](../assets/../../assets/layout-flex.png)
+
+> 给父元素（Flex容器）设置 display:flex；子元素（Flex项目）会默认排成一行，通过设置容器或项目的各种属性来改变项目布局的方式。
+
+```css
+.father{
+  display: flex;
+  justify-content:space-between; /*居中*/
+}
+```
 
 4.表格布局
 
@@ -155,6 +186,9 @@ flexbox三栏布局解决了position:absolute和float布局的不足，是比较
 - 两种布局方式在实现上也有相同之处，都是让三列浮动，然后通过负外边距形成三列布局。
   
 - 两种布局方式的不同之处在于如何处理中间主列的位置: 圣杯布局是利用父容器的左、右内边距+两个从列相对定位; 双飞翼布局是把主列嵌套在一个新的父级块中利用主列的左、右外边距进行布局调整
+
+
+
 
 ##### 等高列布局
 

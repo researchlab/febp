@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 column by position+margin</title>
+    <style>
+        html,body{margin:0;height:100%;}
+        #left,#right{
+            position:absolute;
+            top:0;
+            width:200px;
+            height:100%;
+            background:#a0b3d6;
+        }
+        #left{
+            left:0;
+        }
+        #right{
+            right:0;
+        }
+        #main{
+            margin:0 210px;
+            background:#ffe6b8;
+            height:100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="left"></div>
+    <div id="right"></div>
+    <div id="main"></div>
+</body>
+</html>

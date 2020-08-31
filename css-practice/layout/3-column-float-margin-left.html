@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 column by float +margin-left </title>
+    <style>
+        html,body{margin:0;height:100%;}
+        #main{width:100%;height:100%;float:left;}
+        #body{margin:0 210px; background:#ffe6b8;height:100%;}
+        #left,#right{width:200px;height:100%;float:left;background:#a0b3d6;}
+        #left{margin-left:-100%} /*本来在屏幕之外(在屏幕右侧), 通过负外边距向左移动了一个屏幕的宽度(100%)*/
+        #right{margin-left:-200px;} /*本来在屏幕外面，向左移动一个自身宽度*/
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="body"></div>
+    </div>
+    <div id="left"></div>
+    <div id="right"></div>
+</body>
+</html>
