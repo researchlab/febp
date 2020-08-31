@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 column</title>
+    <style>
+        .father{
+            border: 2px solid black;
+            /* overflow:hidden; 方式一: overflow:hidden 触发BFC 块级元素 相互不重叠 */
+        }
+        .left{
+            background:red;
+            width:30%;
+            float:left;
+        }
+        .right{
+            background:yellow;
+            width:30%;
+            float:right;
+        }
+        /* 方式二 在父级元素清楚浮动样式*/
+        .clearfix::after{
+            content:'';
+            display:block;
+            clear:both;
+        }
+    </style>
+</head>
+<body>
+    <div class="father clearfix">
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+</body>
+</html>

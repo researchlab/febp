@@ -28,6 +28,24 @@
 
 - [2-column-float](./2-column-float.html)
 
+> 子元素设置float属性后，通常需要在其父元素设置清除浮动的样式，即在父元素添加一个.clearfix的类，样式为
+
+```css
+.clearfix::after{
+   content: '';
+   display: block;
+   clear: both;
+}
+```
+
+- [2-column-float-clearfix](./2-column-float-clearfix.html)
+
+由此可见解决父元素没有高度的两种方式
+```diff
++ 父元素设置 overflow:hidden;
++ 父元素设置 clearfix;
+```
+
 2.Flexbox 布局
 
 - [2-column-flex](./2-column-flex.html)
