@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3-column-float</title>
+    <style>
+        html *{
+            padding: 0;
+            margin:0;
+        }
+        h1{
+            text-align: center;
+        }
+        .layout article div {
+            text-align: center;
+            min-height: 150px;
+        }
+        .layout .left {
+            float: left;
+            width: 300px;
+            background: red;
+        }
+        .layout .center{
+            background: yellow;
+        }
+        .layout .right{
+            float: right;
+            width: 300px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+   <section class="layout">
+    <h1>三栏布局</h1>
+    <article class="left-right-center">
+        <div class="left">left</div>
+        <div class="right">right</div>
+        <div class="center">
+            浮动解决方案
+        </div>
+    </article>
+   </section>
+</body>
+</html>
