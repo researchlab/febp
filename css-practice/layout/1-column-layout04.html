@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 column</title>
+    <style>
+        .wrapper{
+            width: 80%;
+            margin:50px auto;
+            border: 2px solid #aaa;
+            box-sizing:border-box;
+            /* 采用bfc清除浮动 */
+            overflow: hidden;
+        }
+        .nav{
+            float:left;
+            width:200px;
+            background:#faa;
+            height:500px;
+        }
+        .content{
+            width:100%;
+            background:yellow;
+            height:500px;
+            margin-left:200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="nav"></div>
+        <div class="content">content</div>
+    </div>
+</body>
+</html>
