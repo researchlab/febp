@@ -61,6 +61,10 @@
 
 - [2-column-flex](./2-column-flex.html)
 
+```diff
+- 注意，设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效。
+```
+
 3.Grid 布局
 
 - [2-column-grid](./2-column-grid.html)
