@@ -10,8 +10,10 @@
             padding:0;
         }
         .wrapper{
-            width:100%;
             display:flex;
+            /* 以沿主轴方向行显示，不换行，从而来显示3个块 */
+            flex-flow:row nowrap; 
+            width:100%;
         }
         .wrapper .left{
             width:200px;
