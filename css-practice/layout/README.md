@@ -188,8 +188,9 @@ flexbox三栏布局解决了position:absolute和float布局的不足，是比较
   
 - 两种布局方式的不同之处在于如何处理中间主列的位置: 圣杯布局是利用父容器的左、右内边距+两个从列相对定位; 双飞翼布局是把主列嵌套在一个新的父级块中利用主列的左、右外边距进行布局调整
 
+- 双飞翼布局只需要包裹中间列即可，而圣杯布局要包裹三列;
 
-
+- 双飞翼布局使用margin , 而圣杯布局用的是padding 为左右留出空间;
 
 ##### 等高列布局
 
@@ -219,3 +220,13 @@ flexbox三栏布局解决了position:absolute和float布局的不足，是比较
 3.footer 要使用 margin 为负来确定自己的位置
 
 4.在 main 区域需要设置 padding-bottom。这也是为了防止负 margin 导致 footer 覆盖任何实际内容。
+
+##### 复杂布局
+
+![fz01](../../assets/fz01.png)
+
+![fz02](../../assets/fz02.png)
+
+[css 多列布局 column-fill](https://developer.mozilla.org/zh-CN/docs/Web/CSS/column-fill)
+
+[七个你可能不了解的CSS单位](https://www.w3cplus.com/css/7-css-units-you-might-not-know-about.html)
