@@ -1,3 +1,5 @@
+// https://leetcode-cn.com/problems/count-binary-substrings/
+
 import subStr from '../../code/string/696.count-binary-substrings';
 
 // test('subStr(00110011)',()=>{
