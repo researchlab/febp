@@ -1,0 +1,20 @@
+{
+  "name": "pat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^26.3.0",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^26.4.2",
+    "regenerator-runtime": "^0.13.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
