@@ -20,9 +20,18 @@ export default (events) => {
                 }
             }
         }
+        // path 
+        let path = {}
+        for (let t =T,i=n; t >=1;){
+            while (dp[i][t] === dp[i-1][t] && i >=1){
+                i = i-1
+            }
+            path[i]=events[i-1]
+            t = t - events[i-1][1]
+        }
+        console.log(path)
         return dp[n][T];
     }
-   
     return knapsack(maxDeadline)
 }
 
