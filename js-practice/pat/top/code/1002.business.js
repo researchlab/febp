@@ -12,6 +12,8 @@ export default (events) => {
         let dp = Array.from(new Array(n+1),()=> new Array(T+1).fill(0))
         for (let i = 1; i <=n; i++){
             for(let t = 1; t <=T; t++){
+                // 在当前可用t天的情况下, 做完第i件事情所剩余的天数, 如果大于等于0表示当前这个事情可以做
+                // 否则不能做
                 let k = Math.min(t,events[i-1][2]) - events[i-1][1]
                 if (k >= 0){
                     dp[i][t] = Math.max(dp[i-1][t],dp[i-1][k] + events[i-1][0])
@@ -30,6 +32,7 @@ export default (events) => {
             t = t - events[i-1][1]
         }
         console.log(path)
+        console.log(dp)
         return dp[n][T];
     }
     return knapsack(maxDeadline)

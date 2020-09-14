@@ -3,8 +3,9 @@ import knapsack from '../code/1002.business';
 test('knapsack:data,12',()=>{
     let data = [
         [8,3,4],
-        [4,1,2],
-        [6,2,2]
+        
+        [6,2,2],
+        [4,1,2]
     ]
     expect(knapsack(data)).toBe(12)
 })
