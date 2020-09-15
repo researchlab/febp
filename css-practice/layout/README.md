@@ -234,3 +234,9 @@ flexbox三栏布局解决了position:absolute和float布局的不足，是比较
 [css 多列布局 column-fill](https://developer.mozilla.org/zh-CN/docs/Web/CSS/column-fill)
 
 [七个你可能不了解的CSS单位](https://www.w3cplus.com/css/7-css-units-you-might-not-know-about.html)
+
+[CSS 定位详解](https://www.ruanyifeng.com/blog/2019/11/css-position.html)
+
+[Flex 布局示例](http://static.vgee.cn/static/index.html)
+
+[Flex 布局教程：实例篇](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html)
