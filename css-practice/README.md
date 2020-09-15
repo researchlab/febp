@@ -30,3 +30,11 @@ height指的是块级别元素的高度,line-height指的是元素内容的高�
 - [border-box和content-box最直观的区别和解释【不理解包赔】](https://blog.csdn.net/AndyNikolas/article/details/79169798?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param)
 
 - [css3属性box-sizing:border-box 用法解析](https://www.cnblogs.com/xinjianheyi/p/6552695.html)
+
+##### vertical-align的作用
+
+vertical-align是用来设置行内元素对齐方式的。说白了就是display属性值为inline、inline-block、inline-table另加一个table-cell的元素。
+
+[vertical-align到底怎么用](https://www.jianshu.com/p/ce7e4a997a2c)
+
+[深入理解css中vertical-align属性](https://www.cnblogs.com/starof/p/4512284.html)
