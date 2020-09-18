@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex grid</title>
+    <style>
+        .grid{
+            display:flex;
+        }
+        .grid-cell{
+            flex:1;
+            margin:10px;
+            background: rgb(238, 238, 238);
+            justify-content: center;
+            text-align: center;
+            border-radius: 5px;
+            color:gray;
+        }
+        .grid-cell span{
+            height:60px;
+            line-height: 60px;
+        }
+        .grid-cell p{
+            text-align:justify;
+            padding:5px;
+            margin:5px;
+            /* border: 1px solid red; */
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="grid-cell"><span>1/2</span></div>
+        <div class="grid-cell"><span>1/2</span></div>
+    </div>
+    <div class="grid">
+        <div class="grid-cell"><span>1/3</span></div>
+        <div class="grid-cell"><span>1/3</span></div>
+        <div class="grid-cell"><span>1/3</span></div>
+    </div>
+    <div class="grid">
+        <div class="grid-cell"><span>1/4</span></div>
+        <div class="grid-cell"><span>1/4</span></div>
+        <div class="grid-cell"><span>1/4</span></div>
+        <div class="grid-cell"><span>1/4</span></div>
+    </div>
+    <div class="grid">
+        <div class="grid-cell"><p>Full height, even when my content doesn't fill the space.</p></div>
+        <div class="grid-cell"><p>Anti Tracks is a complete solution to protect your privacy and enhance your PC performance. With a simple click Anti Tracks securely erase your internet tracks, computer activities and programs history information stored in many hidden files on your computer.Anti Tracks support Internet Explorer, AOL, Netscape/Mozilla and Opera browsers. It also include more than 85 free plug-ins to extend erasing features to support popular programs such as ACDSee, Acrobat Reader, KaZaA, PowerDVD, WinZip, iMesh, Winamp and much more. Also you can easily schedule erasing tasks at specific time intervals or at Windows stat-up/ shutdown.To ensure maximum privacy protection Anti Tracks implements the US Department of Defense DOD 5220.22-M, Gutmann and NSA secure erasing methods, making any erased files unrecoverable even when using advanced recovery tools.</p></div>
+    </div>
+</body>
+</html>
