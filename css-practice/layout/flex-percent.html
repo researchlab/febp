@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex percent</title>
+    <style>
+        .grid{
+            display:flex;
+        }
+        .grid-cell{
+            flex:1;
+            margin:5px;
+            padding:5px;
+            background:rgb(238, 236, 236);
+            text-align: center;
+            border-radius: 5px;
+            color:gray;
+        }
+        .grid-cell span{
+            height:60px;
+            line-height:60px;
+        }
+        .grid-cell.u-full{
+            flex:0 0 100%; /*0 存在剩余空间不放大, 0 空间不足时不缩小, 100% 表示项目占整个flex容器多大的百分比*/
+        }
+        .grid-cell.u-lof2{
+            flex: 0 0 50%;
+        }
+        .grid-cell.u-lof3{
+            flex: 0 0 33.3333%;
+        }
+        .grid-cell.u-lof4{
+            flex: 0 0 25%;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="grid-cell u-lof2"><span>1/2</span></div>
+        <div class="grid-cell"><span>auto</span></div>
+        <div class="grid-cell"><span>auto</span></div>
+    </div>
+    <div class="grid">
+        <div class="grid-cell"><span>auto</span></div>
+        <div class="grid-cell u-lof3"><span>1/3</span></div>
+    </div>
+    <div class="grid">
+        <div class="grid-cell u-lof4"><span>1/4</span></div>
+        <div class="grid-cell"><span>auto</span></div>
+        <div class="grid-cell u-lof3"><span>1/3</span></div>
+    </div>
+</body>
+</html>
