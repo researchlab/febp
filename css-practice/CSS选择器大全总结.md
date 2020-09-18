@@ -29,6 +29,17 @@ CSS选择器太多，下面是常见的容易混淆的选择器列表
 + 说明: 选择紧接在 <div> 元素之后的所有 <p> 元素。
 ```	
 
+**.elementA.elementB**
+
+```diff
++ 说明: 指的是一个元素，同时满足.elementA和.elementB
+
++ 示例: .elementA.elementB
++ html示例: <div class="elementA elementB"></div>
+
++ 示例: div.elementA
++ html示例: <div class="elementA"></div>
+```
 link:
 
 1. [CSS 选择器参考手册](https://www.w3school.com.cn/cssref/css_selectors.asp)
