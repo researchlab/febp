@@ -1,4 +1,14 @@
 
+
+[CSS相关总结](https://www.jianshu.com/p/422f541ccde8)
+
+[前端之路——笔记（基础css）](https://www.jianshu.com/p/92c8f562a08f)
+
+[css样式大全](https://www.cnblogs.com/ssjd/p/12893892.html)
+
+[css初始化表(normalize.css)](https://www.cnblogs.com/ssjd/p/12909144.html)
+
+
 ##### 深入理解CSS overflow:hidden
 三个主要作用
 - 溢出;
@@ -38,3 +48,5 @@ vertical-align是用来设置行内元素对齐方式的。说白了就是displa
 [vertical-align到底怎么用](https://www.jianshu.com/p/ce7e4a997a2c)
 
 [深入理解css中vertical-align属性](https://www.cnblogs.com/starof/p/4512284.html)
+
+[CSS把容器中的内容限制行数，在超过行数后，在最后一行显示"..."](https://www.cnblogs.com/ssjd/p/13201516.html)
