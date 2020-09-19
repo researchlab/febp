@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex holy</title>
+    <style>
+        html,body{
+            margin:0;
+            padding:0;
+        }
+        .holy{
+            display:flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        .holy header, .holy footer{
+            background: gray;
+            height:60px;
+            text-align: center;
+        }
+        .holy span{
+            height:60px;
+            line-height: 60px;
+        }
+        .holy-body{
+            display:flex;
+            flex:1;
+        }
+        .holy-content{
+            flex:1;
+        }
+        .holy-nav, .holy-aside{
+            flex: 0 0 12em;
+        }
+        .holy-nav{
+            background: orange;
+        }
+        .holy-aside{
+            background: orangered;
+        }
+        .holy-nav{
+            order:-1; /* order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0 */
+        }
+    </style>
+</head>
+<body>
+    <div class="holy">
+        <header><span>#header</span></header>
+        <div class="holy-body">
+            <main class="holy-content">#content</main>
+            <nav class="holy-nav">#nav</nav>
+            <aside class="holy-aside">#aside</aside>
+        </div>
+        <footer><span>#footer</span></footer>
+    </div>
+</body>
+</html>
