@@ -2,6 +2,8 @@
 
 ![layout](../../assets/layout.png)
 
+![layout](../../assets/flex-layout-attr.png)
+
 ##### 单列布局
 1.header, content 和 footer等宽
 
