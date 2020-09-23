@@ -347,6 +347,11 @@ column-fill 属性有两个属性值：
 
 [css 多列布局 column-fill](https://developer.mozilla.org/zh-CN/docs/Web/CSS/column-fill)
 
+
+##### 全屏布局 
+
+[screen](./allscreen.html)
+
 [七个你可能不了解的CSS单位](https://www.w3cplus.com/css/7-css-units-you-might-not-know-about.html)
 
 [CSS 定位详解](https://www.ruanyifeng.com/blog/2019/11/css-position.html)
