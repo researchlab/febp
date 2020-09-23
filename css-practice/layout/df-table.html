@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>df table</title>
+    <style>
+        .parent-fix{
+            overflow: hidden;
+            /* width:1444px; */
+        }
+       .parent{
+           /* width:1434px; */
+           width:100%;
+           display:table;
+           margin-left: -10px;
+       }
+       .col1,.col2,.col3,.col4{
+           height: 300px;
+           display: table-cell;
+           box-sizing: border-box;
+           padding-left:10px;
+       }
+       .inner{
+           height:300px;
+       }
+       .col1 .inner{
+          background: hotpink;
+        }
+        .col2 .inner{
+          background: lightblue;
+        }
+        .col3 .inner{
+          background: green;
+        }
+        .col4 .inner{
+          background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <d class="parent-fix">
+        <div class="parent">
+            <div class="col1">
+                <div class="inner"></div>
+            </div>
+            <div class="col2">
+                <div class="inner"></div>
+            </div>
+            <div class="col3">
+                <div class="inner"></div>
+            </div>
+            <div class="col4">
+                <div class="inner"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

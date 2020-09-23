@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>df float</title>
+    <style>
+        .parent-fix{
+          overflow:hidden; /*隐藏每一列之间可能出现的空隙*/
+        }
+        .parent{
+          height:300px;
+          /*整体向左移动10px, 让最左边的间隙消失*/
+          margin-left:-10px;
+        }
+        .col1,.col2,.col3,.col4{
+          height:300px;
+          width:25%;
+          float:left;
+          box-sizing:border-box;
+          /*增加空白间隙*/
+          padding-left:10px;
+        }
+        .inner{
+          height:300px;
+        }
+        .col1 .inner{
+          background: hotpink;
+        }
+        .col2 .inner{
+          background: lightblue;
+        }
+        .col3 .inner{
+          background: green;
+        }
+        .col4 .inner{
+          background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent-fix">
+        <div class="parent">
+          <div class="col1">
+            <div class="inner"></div>
+          </div>
+          <div class="col2">
+            <div class="inner"></div>
+          </div>
+          <div class="col3">
+            <div class="inner"></div>
+          </div>
+          <div class="col4">
+            <div class="inner"></div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>
