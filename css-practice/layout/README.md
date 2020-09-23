@@ -58,6 +58,13 @@
 
 利用浮动和负外边距来进行左边固定右边自适应的布局
 
+- [ 2-column-display-table](./2-column-display-table.html)
+
+对左右两列的父级元素进行设置（如果没有父级元素，需要新增一个）
+
+display属性：table值的特性：表格的单元格的宽度会自动分配（默认是50%等分，设置值后，另外的部分会自适应）
+
+table-layout属性：设置为fixed，防止过长的内容撑破表格
 
 2.Flexbox 布局
 

@@ -253,3 +253,76 @@
 - 然后便是绝对定位，虽然代码多了点，但是胜在适用于不同情况；
 - 移动端兼容性允许的情况下能用flex就用flex
 ```
+
+```diff 
++ 注意事项:
+
++ text-align 是为文本内容设置对齐方式, 属性具有继承性，导致子级元素的文本也具有相同的效果;
++ block：块级元素（width和height属性有效）
++ inline：内联元素（text-align属性有效，width和height属性无效）
++ vertical-align属性：用于设置文本内容的垂直方向对齐方式, 一般设置在父元素，作用于子元素，但是属性具有继承性，导致父级元素的文本也具有相同的效果;
+
+```
+
+**2.6 居中布局**
+
+**1.table + margin & table-cell + vertical-align**
+  
+> table + margin 实现水平方向居中，table-cell + vertical-align实现垂直方向居中
+
+```css
+<style type="text/css">
+  .parent {
+    width: 600px;
+    height: 400px;
+    background: #ccc;
+
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .child {
+    width: 100px;
+    height: 100px;
+    background: #c9394a;
+
+    /* 按照前面介绍这边应该是table，但<table>作为<td>的子元素，与html语义化不符 */
+    /* 使用block也能起到一样的效果 */
+    display: block;
+    margin: 0 auto;
+  }
+</style>
+
+<div class="parent">
+  居中
+  <div class="child"></div>
+</div>
+```
+
+**2.absolute + transform**
+
+> 利用定位的方式来实现居中效果
+
+```css
+.parent{
+  width:600px;
+  height:400px;
+  background:#ccc;
+  
+  position: relative;
+}
+.child{
+  width:100px;
+  height:100px;
+  background:red;
+  
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%) /* 将child 所在div元素向左向上移动50%*/
+}
+
+<div class="parent">
+  居中
+  <div class="child"></div>
+</div>
+```
