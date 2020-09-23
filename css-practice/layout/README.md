@@ -359,3 +359,5 @@ column-fill 属性有两个属性值：
 [Flex 布局示例](http://static.vgee.cn/static/index.html)
 
 [Flex 布局教程：实例篇](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html)
+
+[通俗易懂的CSS布局display、position、float详解](https://www.jianshu.com/p/914b76bae7b5)
