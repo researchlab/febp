@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>columns-span</title>
+    <style type="text/css">
+        .parent, .parent2 {
+          columns: 4 300px;
+          column-gap: 20px;
+          column-rule: 5px tomato double;
+        }
+        .parent3{
+          columns: 2 300px;
+          column-gap: 20px;
+          column-rule: 5px tomato double;
+        }
+        .col1, .col2, .col3, .col4, .col5 ,.col6{
+          height: 300px;
+        }
+        .col1 {
+          background: hotpink;
+        }
+        .col2 {
+          background: lightblue;
+        }
+        .col3 {
+          background: green;
+        }
+        .col4 {
+          background: yellow;
+        }
+        .col5 {
+          background: tomato;
+          margin-top:10px;
+          column-span: all;
+        }
+        .col6 {
+          background: rgb(71, 74, 255);
+          margin-top:10px;
+          column-span: all;
+        }
+      </style>
+</head>
+<body>
+    
+      
+      <div class="parent">
+        <div class="col1"></div>
+        <div class="col2"></div>
+        <div class="col3"></div>
+        <div class="col4"></div>
+      </div>
+      <div class="parent2">
+        <div class="col5"></div>
+      </div>
+      <div class="parent3">
+        <div class="col6"></div>
+      </div>
+</body>
+</html>

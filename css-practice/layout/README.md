@@ -211,8 +211,39 @@ flexbox三栏布局解决了position:absolute和float布局的不足，是比较
 
 1.利用背景图片
 2.利用正padding+负margin
+  - 原理: padding-bottom 和 margin-bottom都设置为极大且相反值的时候，有一个对冲的效果，然后结合父元素的 overflow 属性，实现伪等高布局。
+  
+```css
+<style type="text/css">
+  .parent {
+    overflow: hidden;
+  }
+
+  .left, .right {
+    width: 300px;
+
+    float: left;
+    padding-bottom: 9999px;
+    margin-bottom: -9999px;
+  }
+  .left {
+    background: #93394a;
+  }
+  .right {
+    background: #ccc;
+  }
+</style>
+
+<div class="parent">
+  <div class="left">我是左列</div>
+  <div class="right">我是右列我是右列我是右列我是右列www.wenyuanblog.com我是右列我是右列我是右列我是右列www.wenyuanblog.com我是右列我是右列我是右列</div>
+</div>
+```
+
 3.模仿表格
 4.使用边框和定位
+5.display 属性的 table 实现等高布局效果
+  - 原理: 表格的单元格默认是等高的
 
 > 上述几种方式都不太理想;
 
@@ -239,6 +270,80 @@ flexbox三栏布局解决了position:absolute和float布局的不足，是比较
 ![fz01](../../assets/fz01.png)
 
 ![fz02](../../assets/fz02.png)
+
+##### 等分布局
+
+等分布局就是指一行被分为若干列，每一列的宽度是相同的值。
+
+等分布局主要有两种实现方式：
+
+- float 属性实现等分布局效果
+- display 属性的 table 实现等分布局效果
+
+需要兼顾的问题：
+
+- 实现等分布局时，有可能需要每一列之间实现空白间隔区域
+  - 通过在原有HTML页面源代码的基础上增加一个父级容器（本案例中为parent-fix）来实现
+
+[df float](./df-float.html)
+
+[df table](./df-table.html)
+
+
+##### 多列布局
+
+columns 属性：它是一个简写属性，可以分成以下两个属性
+
+- column-count 属性：定义列的数量
+  - auto：默认值，用于表示列的数量由其他CSS属性决定
+  - number：必须是正整数，用于表示定义列的数量, 注意: 这个数字表示将一行分成几列, 为2表示这一行分成2列， 为3表示这一行分成3列， 后面使用column-span:all属性 不管是多少列，都会占满整行;
+  
+- column-width 属性：定义列的宽度
+  - auto：默认值，用于表示列的宽度由其他CSS属性决定
+  - length：必须是正整数，用于表示定义列的宽度
+
+[columns-attr](./columns-attr.html)
+
+用columns 设置多列时， 列与列之间有空白的间隙，这个间隙不是由padding或者margin设置的，而是CSS3在多列布局时自动分配的。
+
+在CSS3中，column-gap 属性用于设置列与列之间的间距，该属性主要为多列显示时的元素设置。
+
+column-gap 属性有两个属性值：
+
+- normal：用于表示使用浏览器定义列的默认间距，默认值为1em
+- length：必须是正整数，用于表示定义列之间的间距
+
+[columns-gap](./columns-gap.html)
+
+在CSS3中，column-rule 属性用于定义列与列之间的边框，其中包括边框宽度、边框颜色以及边框样式。
+
+column-rule 属性：它是一个简写属性，可以分成以下三个属性
+
+- column-rule-width 属性：用于表示列与列之间的边框宽度
+- column-rule-color 属性：用于表示列与列之间的边框颜色
+- column-rule-style 属性：用于表示列与列之间的边框样式
+
+[columns-rule](./columns-rule.html)
+
+在CSS3中，column-span 属性用于定义一个列元素是否跨列。
+
+column-span 属性有两个属性值：
+
+- none：用于表示元素不跨列
+- all：用于表示元素跨所有列
+
+[columns-span](./columns-span.html)
+
+在CSS3中，column-fill 属性用于定义列的高度是由内容决定，还是统一高度。
+
+column-fill 属性有两个属性值：
+
+- auto：默认值，用于表示列的高度由内容决定
+- balance：用于表示列的高度根据内容最多的一列高度为准
+
+注意: 这个属性在Chrome浏览器中兼容不是很好
+
+[一文详解主流CSS布局](https://www.wenyuanblog.com/blogs/css-layout.html#toc-heading-27)
 
 [css 多列布局 column-fill](https://developer.mozilla.org/zh-CN/docs/Web/CSS/column-fill)
 
