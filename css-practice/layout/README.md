@@ -361,3 +361,7 @@ column-fill 属性有两个属性值：
 [Flex 布局教程：实例篇](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html)
 
 [通俗易懂的CSS布局display、position、float详解](https://www.jianshu.com/p/914b76bae7b5)
+
+[CSS 布局：如何实现居中布局？](https://segmentfault.com/a/1190000019557558)
+
+[最全面的水平垂直居中方案与flexbox布局](https://segmentfault.com/a/1190000011791428?utm_source=sf-related)
