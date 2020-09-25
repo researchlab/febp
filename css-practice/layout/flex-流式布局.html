@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex 流式布局</title>
+    <style>
+        .box{
+            display: flex;
+            flex-flow:row wrap;
+            height: 300px;
+            width: 400px;
+            background-color: yellow;
+        }
+        .content{
+            flex:0 0 25%; /*不放大，不缩小， 在分配空间之前预先分配占用的空间*/
+            background-color: blue;
+            border: 2px solid red;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h1>10个</h1>
+    <div class="box">
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+    </div>
+</body>
+</html>
