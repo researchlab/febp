@@ -107,3 +107,5 @@ npm run dev
 
 
 [08、React系列之--使用webpack管理](https://www.jianshu.com/p/732c4d501668)
+
+![login](../../assets/12-webpack-loaders.jpg)
