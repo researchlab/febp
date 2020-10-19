@@ -20,6 +20,31 @@ module.exports = {
                         presets:['@babel/env','@babel/react']
                     }
                 }]
+            },
+            {
+                test:/\.(less|css)$/,
+                use:['style-loader','css-loader','less-loader']
+            },
+            {
+                test: /\.(tmpl)(\?.+)?$/,
+                exclude: /favicon\.png$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: 'assets/[name].[ext]'
+                    }
+                }]
+            },
+            {
+                test: /\.(png|jpg|jpeg|gif|eot|ttf|woff|woff2|svg|svgz)(\?.+)?$/,
+                exclude: /favicon\.png$/,
+                use: [{
+                    loader: 'url-loader',
+                    options: {
+                        limit: 100,
+                        name: 'assets/[name].[ext]'
+                    }
+                }]
             }
         ]
     }
