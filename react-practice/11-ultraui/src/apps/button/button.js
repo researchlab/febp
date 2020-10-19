@@ -1,10 +1,10 @@
 import React from 'react';
 import {Button, ButtonGroup, ButtonList } from '@huayun/ultraui';
-import { render } from 'react-dom';
+import './button.less';
 
 class UltraButton extends React.Component{
     render(){
-        return (<div>
+        return (<div className="wrapper">
             <ButtonList className="m-b">
             <Button type="primary" name="主按钮" />
             <Button type="default" name="次按钮" />

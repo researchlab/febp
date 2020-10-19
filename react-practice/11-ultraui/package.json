@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack",
-    "dev": "webpack-dev-server --progress --port=8899"
+    "dev": "webpack-dev-server --progress --port=8889"
   },
   "dependencies": {
     "@babel/core": "^7.12.3",
