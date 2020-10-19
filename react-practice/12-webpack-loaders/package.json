@@ -1,0 +1,31 @@
+{
+  "name": "01-loaders",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --mode development",
+    "dev": "webpack-dev-server --progress --port 8888"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^3.3.0",
+    "less": "^3.12.0",
+    "less-loader": "^5.0.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.8.2"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.0.0"
+  }
+}
