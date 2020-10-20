@@ -50,3 +50,11 @@ vertical-align是用来设置行内元素对齐方式的。说白了就是displa
 [深入理解css中vertical-align属性](https://www.cnblogs.com/starof/p/4512284.html)
 
 [CSS把容器中的内容限制行数，在超过行数后，在最后一行显示"..."](https://www.cnblogs.com/ssjd/p/13201516.html)
+
+##### 清除浮动
+
+[前端面试题-clearfix（清除浮动）](https://segmentfault.com/a/1190000013664630)
+
+[通过例子讲解BFC](https://segmentfault.com/a/1190000021043100)
+
+[前端入门-day3(CSS中浮动和清除浮动)](https://segmentfault.com/a/1190000016811447?utm_source=sf-related)
