@@ -374,6 +374,7 @@ body{
     _height:350px;
     border:1px solid #e8e8e8;
     float: right;
+    background-color: #FFF;
 }
 
 .news_type h2{
@@ -442,4 +443,26 @@ body{
 .page a:hover,.page a:active{
     color:#fff;
     background-color: #cc1b1b;
+}
+
+.list_box h1{
+    font-family: "微软雅黑";
+    font-size:20px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.list_box_newsInfo{
+    color:#666;
+    text-align: center;
+    border-bottom: 1px dotted #666;
+}
+
+.list_box_newsContent{
+    font-size:14px;
+    /* 内容上下左右有20px的空间 */
+    padding:20px;
+    line-height: 25px;
+    /* 设置段落缩进 */
+    text-indent: 2em;
 }
