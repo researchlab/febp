@@ -42,6 +42,23 @@
 .on{
     background-color: #c00;
 }
+.older{
+    float:right;
+    background: url("../images/li_bg2.gif") no-repeat left center;
+    padding: 0px 10px 0px 15px;
+    font-size:10px;
+    color: #666;
+    margin-top:35px;
+}
+.older a:link, .older a:visited{ 
+    color: #8E8E8E;
+    text-decoration: none;
+}
+
+.older a:hover, .older a:active{
+    color:#900;
+    text-decoration: none;
+}
 
 .main{
     width:1000px;

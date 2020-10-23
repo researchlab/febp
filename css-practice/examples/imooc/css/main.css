@@ -24,6 +24,7 @@ body{
     float: right;
     width:70px;
     line-height: 27px;
+    color: orangered
 }
 /* a:link , 超链接初始状态, a:visited 超链接访问之后的状态 */
 .top_content a:link, .top_content a:visited{ 
