@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5分钟上手Echarts</title>
+    <script src="../echarts.min.js"></script>
+</head>
+<body>
+    <div id="main" style="width:600px; height:400px;"></div>
+    <div id="pie" style="width:600px; height:400px;"></div>
+    <div id="scatter" style="width:600px; height:400px;"></div>
+    <script type="text/javascript">
+    // var myChart = echarts.init(document.getElementById('main'));
+    var myChart = echarts.init(document.getElementById('main'));
+    var option = {
+        title:{
+            text: 'Echarts 入门示例'
+        },
+        tooltip:{},
+        legend:{
+            data:['销量']
+        },
+        xAxis:{
+            data:["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+        },
+        color: ['#fff','#2f4554', '#61a0a8', '#d48265', '#91c7ae','#749f83',  '#ca8622', '#bda29a','#6e7074', '#546570', '#c4ccd3'],
+        yAxis:{},
+        series:[{
+            name:'销量',
+            type:'bar',
+            data:[5,20,36,10,10,20]
+        }]
+    };
+    myChart.setOption(option);
+    var myPie = echarts.init(document.getElementById('pie'))
+    .setOption({
+        series:{
+            type: 'pie',
+            data:[
+                {name:"A",value:1212},
+                {name:"B",value:2323},
+                {name:"C",value:1919}
+            ]
+        }
+    });
+
+    </script>
+</body>
+</html>
