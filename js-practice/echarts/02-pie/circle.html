@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css circle</title>
+    <style>
+       #sun{
+           margin:150px;
+           background-color: #f1f9f1;
+           width:200px;
+           height:200px;
+           border-radius: 50%;
+           border:1px solid #ade7ad;
+           position:relative;
+       }
+       #sun:before{
+           content:"";
+           width:10px;
+           height:1px;
+           margin:auto;
+           position:absolute;
+           left:0;
+           right:0;
+           top:0;
+           bottom:0;
+           /* border-radius: 15px; */
+           /* background-color: #333; */
+           box-shadow: 150px 0px 0px 1px #b7e6b7, -150px 0px 0px 1px #b7e6b7;
+       } 
+       #sun:after{
+           content:"";
+           width:1px;
+           height:10px;
+           margin:auto;
+           position: absolute;
+           left:0;
+           right:0;
+           top:0;
+           bottom:0;
+           box-shadow: 0px 150px 0 1px #b7e6b7, 0 -150px 0 1px #b7e6b7;
+       }
+       #sun:after{
+           content:"";
+           width:1px;
+           height:10px;
+           margin:auto;
+           position: absolute;
+           left:0;
+           right:0;
+           top:0;
+           bottom:0;
+           box-shadow: 0px 150px 0 1px red, 0 -150px 0 1px #b7e6b7;
+       }
+       .sunny {
+        position:absolute;left:0;right:0;top:0;bottom:0;
+        width:1px;height:10px;margin:auto;
+        transform:rotate(45deg);
+        border-radius:15px;
+        box-shadow:0px 150px 0 1px #b7e6b7,0 -150px 0 1px #b7e6b7;
+        }
+       .sunny:after {
+        content:" ";
+        position:absolute;
+        width:1px;height:10px;margin:auto;
+        transform:rotate(90deg);
+        border-radius:15px;
+        box-shadow:0 150px 0 1px #b7e6b7,0 -150px 0 1px #b7e6b7;
+        }
+
+        .sunny2 {
+        position:absolute;left:0;right:0;top:0;bottom:0;
+        width:1px;height:10px;margin:auto;
+        transform:rotate(5deg);
+        border-radius:15px;
+        box-shadow:0px 150px 0 1px #b7e6b7,0 -150px 0 1px #b7e6b7;
+        }
+       .sunny2:after {
+        content:" ";
+        position:absolute;
+        width:1px;height:10px;margin:auto;
+        transform:rotate(10deg);
+        border-radius:15px;
+        box-shadow:0 150px 0 1px #b7e6b7,0 -150px 0 1px #b7e6b7;
+        }
+        .sunny3 {
+        position:absolute;left:0;right:0;top:0;bottom:0;
+        width:1px;height:10px;margin:auto;
+        transform:rotate(15deg);
+        border-radius:15px;
+        box-shadow:0px 150px 0 1px blue,0 -150px 0 1px #b7e6b7;
+        }
+       .sunny3:after {
+        content:" ";
+        position:absolute;
+        width:1px;height:10px;margin:auto;
+        transform:rotate(20deg);
+        border-radius:15px;
+        box-shadow:0 150px 0 1px blue,0 -150px 0 1px #b7e6b7;
+        }
+     
+    </style>
+</head>
+<body>
+    <div id="sun">
+        <div class="sunny"></div>
+        <div class="sunny2"></div>
+        <div class="sunny3"></div>
+        <div class="sunny4"></div>
+        <div class="sunny5"></div>
+        <div class="sunny6"></div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echarts pie</title>
+    <script src="../echarts.min.js"></script>
+    <style>
+    .main{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .pointPercent {
+        width: 260px;
+        height: 260px;
+        z-index:100;
+    }
+    .logo{
+        float:right;
+        margin-right: -10px;
+    }
+    </style>
+</head>
+<body>
+    <div class="main">
+      <div id="pointPercent" class="pointPercent"></div>
+    </div>
+    <script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('pointPercent'));
+    var data =[{  
+	                name: '其它',
+	                value: 320
+	            }];
+
+    let options = {
+      series: [
+          {
+        name: "",
+        type: "gauge",
+        radius: "50%",
+        center: ['50%', '50%'],
+        startAngle: 0,
+        endAngle: 356,
+        splitNumber: 90,
+        hoverAnimation: true,
+        axisTick: {
+          show: false
+        },
+        splitLine: {
+          show: true,
+          length: 5,
+          lineStyle: {
+            color: 'green',
+            width: 0.5,
+            type: 'solid',
+          },
+        },
+        axisLabel: {
+          show: false
+        },
+        pointer: {
+          show: false
+        },
+        axisLine: {
+          lineStyle: {
+            opacity: 0
+          }
+        },
+        detail: {
+          show: false
+        },
+        data: [{
+          value: 0,
+          name: ""
+        }]
+      },
+    //   {
+	//         name: "",         // 系列名称
+	//         type: 'pie',                    // 系列类型 
+	//         center:['50%','50%'],           // 饼图的中心（圆心）坐标，数组的第一项是横坐标，第二项是纵坐标。[ default: ['50%', '50%'] ]
+	//         radius: [0, 51],               // 饼图的半径，数组的第一项是内半径，第二项是外半径。[ default: [0, '75%'] ]
+	//         hoverAnimation: false,          // 是否开启 hover 在扇区上的放大动画效果。[ default: true ]
+    //         color:'green',
+    //         opacity:0.5,
+    //         label:{
+    //             normal:{
+    //                 show:false
+    //             }
+    //         },
+    //         itemStyle:{
+    //             show:false,
+    //             borderColor:'red',
+    //             borderWith:1,
+    //             global:true,
+    //         },
+    //         data: [{
+    //       value: 0,
+    //       name: ""
+    //     }]                     // 系列中的数据内容数组。            
+    //     }
+      ]
+    }
+    myChart.setOption(options);
+    </script>
+</body>
+</html>
