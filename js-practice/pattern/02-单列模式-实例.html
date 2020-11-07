@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单例模式 自定义弹出层实例</title>
+    <style>
+        div.tip {
+            width:500px;
+            height:300px;
+            border:1px solid #333;
+            position:fixed;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            margin:auto;
+            background-color: #fff;
+            display:none;
+        }
+        div.tip > .top {
+            height: 20px;
+            background-color: skyblue;
+            padding: 10px;
+        }
+        div.tip > .top > span {
+            float:right;
+            width:20px;
+            height:20px;
+            border-radius: 50%;
+            cursor: pointer;
+            background-color: #fff;
+            font-size: 14px;
+            text-align: center;
+            line-height: 20px;
+        }
+        .tip > .content{
+            height:210px;
+           position:relative;
+        }
+        .tip > .content > p {
+            margin:0;
+            position:absolute;
+            top:50%;
+            left:0;
+            padding:0 20px;
+            width: calc(100% - 40px);
+            text-align: center;
+        }
+        .tip > .btns {
+            height:40px;
+            background-color: skyblue;
+            padding: 5px 30px;
+        }
+        .tip > .btns > button{
+            float:right;
+            padding:9px 40px;
+            margin-left: 30px;
+        }
+    </style>
+ 
+</head>
+<body>
+    <!-- <div class="tip">
+        <div class="top">标题
+            <span>x</span>
+        </div>
+        <div class="content"><p>提示内容</p></div>
+        <div class="btns">
+            <button>取消</button>
+            <button>确定</button>
+        </div>
+    </div> -->
+    <script>
+         
+   const Tip = (function(){
+       // 业务类实现
+    class Tip {
+            constructor(){
+                this.ele = document.createElement('div')
+                this.ele.className ='tip'
+                document.body.appendChild(this.ele)
+                this.callback = function(){}
+                this.bindEvent()
+            }
+            setContent(txt){
+                console.log(1)
+                this.ele.innerHTML =`
+                <div class="top">标题
+                    <span class="close">x</span>
+                </div>
+                <div class="content"><p>${ txt }</p></div>
+                <div class="btns">
+                    <button class="cancel">取消</button>
+                    <button class="ok">确定</button>
+                </div>
+                `
+                this.ele.style.display = 'block'
+            }
+            
+            bindEvent(){
+                this.ele.addEventListener('click',e =>{
+                    e = e || window.event
+                    const target = e.target || e.srcElement
+                    if (target.className === 'close'){
+                        this.ele.style.display = 'none'
+                    }
+
+                    if(target.className === 'cancel'){
+                        this.ele.style.display = 'none'
+                        this.callback(false)
+                    }
+                    if (target.className === 'ok'){
+                        this.ele.style.display = 'none'
+                        this.callback(true)
+                    }
+                })
+            }
+            
+            setStyle(color){
+                this.ele.querySelector('.top').style.backgroundColor = color
+            }
+        }  
+   
+    let instance = null 
+
+    return function singleTon(options ={}, callback){
+        if (!instance) instance = new Tip()
+
+        instance.setContent(options.txt || 'default value')
+        instance.callback = callback || function(){}
+        instance.setStyle(options.bgColor || 'skyblue')
+        return instance
+    }
+    })()
+    Tip({
+        txt:'hello',
+        bgColor:'red'
+    },res=>{
+        console.log('print',res)
+    })
+   </script>
+</body>
+</html>

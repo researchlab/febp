@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单例模式</title>
+    <script>
+        // singleton
+        const Person = (function(){
+            // 业务函数体
+            function person({name,age,gender}){
+                this.name = name
+                this.age = age
+                this.gender =gender
+            }
+            // 实例
+            let instance = null 
+            // 业务实例接收对象
+            return function(props){
+                if(!instance) instance = new person(props)
+
+                return instance
+            }
+        })()
+       
+        const p1 = Person({name:'Jack',age:18,gender:'男'})
+        const p2 = Person() 
+        console.log(p1,p2)
+        console.log(p1 === p2)
+
+        const Student = (()=>{
+            function student (name,age,gender){
+                this.name = name
+                this.age = age
+                this.gender = gender
+            }
+            let singleTonInstance = null 
+            return (...arg)=>{
+                if (!singleTonInstance) singleTonInstance = new student(...arg)
+
+                return singleTonInstance
+            }
+        })()
+
+        const s1 = Student('Jack',18,'男')
+        const s2 = Student()
+        console.log(s1,s2)
+        console.log(s1 === s2)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
