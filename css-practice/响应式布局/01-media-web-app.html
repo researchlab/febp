@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>basic</title>
+    <style>
+        #div0{
+            width:100px;
+            height:200px;
+        }
+        @media screen and (min-device-width:200px) and (max-device-width:300px){
+            #div0{
+                background-color: red;
+            }
+        }
+        @media screen and (min-device-width:301px) and (max-device-width:500px){
+            #div0{
+                background-color: blue;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="div0"></div>
+</body>
+</html>
