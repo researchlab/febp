@@ -1,0 +1,66 @@
+<!-- https://c.runoob.com/codedemo/2747 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tooltip</title>
+    <style>
+        .wrapper{
+            background: #ececec;
+            cursor: help;
+            font-size:20px;
+            margin:100px;
+            text-align: center;
+            width:200px;
+            height:50px;
+            line-height: 50px;
+            position: relative;
+        }
+        .wrapper .tooltip{
+            background: #1496bb;
+            bottom:120%;
+            color:#fff;
+            display:block;
+            /* left:-25px; */
+            margin-bottom: 15px;
+            opacity: 0;
+            /* padding:5px; */
+            pointer-events: none;
+            position: absolute;
+            width:100%;
+        }
+        .wrapper .tooltip:before{
+            bottom:-20px;
+            content:'';
+            display:block;
+            height:20px;
+            left:0;
+            position: absolute;
+            width:100%;
+        }
+        .wrapper .tooltip:after{
+            border-left:solid transparent 10px;
+            border-right: solid transparent 10px;
+            border-top: solid #1496bb 10px;
+            bottom:-10px;
+            content: '';
+            height:0;
+            left:50%;
+            margin-left:-13px;
+            position:absolute;
+            width:0;
+        }
+        .wrapper:hover .tooltip{
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        I have a tooltip
+        <div class="tooltip">I am a tooltip</div>
+    </div>
+</body>
+</html>
