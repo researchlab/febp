@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tooltip</title>
+    <style>
+        .demo{
+            width:100px;
+            height:100px;
+            position:absolute;
+            top:35%;
+            left:40%;
+            border:2px solid red;
+            border-radius: 8px;
+        }
+        .shixin-x{
+            width:0;
+            height:0;
+            border:10px solid transparent;
+            border-right-color: red;
+            position:relative;
+            top:42%;
+            left:-22%; 
+        }
+        .kongxin{
+            width:0;
+            height:0;
+            border:10px solid transparent;
+            border-right-color: #fff;
+            position:relative;
+            top:22%;
+            left:-20%;
+        }
+        .shixin-right{
+            width:0;
+            height:0;
+            border:10px solid transparent;
+            border-left-color: red;
+            position:relative;
+            top:42%;
+            left:102%;
+           
+        }
+        .shixin-bottom{
+            width:0;
+            height:0;
+            border:10px solid transparent;
+            border-top-color: red;
+            position:relative;
+            top:101%;
+            left:38%;
+        }
+        .shixin-top{
+            width:0;
+            height:0;
+            border:10px solid transparent;
+            border-bottom-color: red;
+            position:relative;
+            top:-21%;
+            left:38%;
+        }
+       
+    </style>
+</head>
+<body>
+    
+    <div class="demo">
+        <div class="shixin-right"></div>    
+    </div>
+    <div class="demo">
+        <div class="shixin-top"></div>
+    </div>
+    <div class="demo">
+        <div class="shixin-bottom"></div>
+    </div>
+    <div class="demo">
+        <div class="shixin-x"></div>
+        <div class="kongxin"></div>
+    </div>
+</body>
+</html>

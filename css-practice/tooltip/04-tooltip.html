@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tooltip</title>
+    <style>
+      .tooltip{
+         width:300px;
+         height:200px;
+         border:2px solid red;
+         border-radius: 8px;
+         position: absolute;
+         left:40%;
+         top:20%;
+      }
+      .tooltip:after {
+          content: "";
+          position: absolute;
+          top: 12px;
+          right: -12px;
+          margin: 4px;
+          border-right: 1px solid red;
+          border-bottom: 1px solid red;
+          width: 10px;
+          height: 10px;
+          transform: rotate(-45deg);
+          -o-transform: rotate(-45deg);
+          -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);｝
+    </style>
+    >
+  </head>
+  <body>
+    <div class="tooltip"></div>
+  </body>
+</html>

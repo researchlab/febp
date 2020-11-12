@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tooltip</title>
+    <style>
+        .tooltip{
+            width:200px;
+            height:200px;
+            border:2px solid red;
+            position: absolute;
+            top:35%;
+            left:40%;
+            border-radius: 8px;
+        }
+        .tooltip:before{
+            display:block;
+            content: '';
+            width:0;
+            height:0;
+            border: 10px solid transparent;
+            /* top */
+            /* border-bottom-color: red;
+            position: relative;
+            margin:0 auto;
+            top:-20px; */
+
+            /* right */
+            /* border-left-color: red;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            left:100%; */
+
+            /* bottom */
+            /* border-top-color: red;
+            position: relative;
+            top:100%;
+            margin:0 auto; */
+
+            /* left */
+            border-right-color: red;
+            position:relative;
+            left:-20px;
+            top:50%;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="tooltip"></div>
+</body>
+</html>
