@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gauge</title>
+    <script src="../echarts.min.js"></script>
+    <style>
+      .container {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .cpu-circule {
+        width: 160px;
+        height: 160px;
+      }
+      .used-chart {
+        border: 1px solid red;
+        width: 200px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="used-chart">
+        <div id="cpu" class="cpu-circule"></div>
+        <div class="used-chart-content">
+          1111
+          <span> / 999 (核) </span>
+        </div>
+      </div>
+      <div class="used-chart">
+        <div id="mem" class="cpu-circule"></div>
+        <div class="used-chart-content">
+          1111
+          <span> / 999 (GB) </span>
+        </div>
+      </div>
+      <div class="used-chart">
+        <div id="storage" class="cpu-circule"></div>
+        <div class="used-chart-content">
+          1111
+          <span> / 999 (GB) </span>
+        </div>
+      </div>
+    </div>
+    <script>
+      let cpu = {
+        id: 'cpu',
+        usedP: 0.3,
+        usedText: '30%',
+        used: 111,
+        total: 9999,
+        title: 'CPU',
+        unit: 'CPUUnit',
+        color: ['#57B2F7', 'rgba(87,178,247,0.37)']
+      }
+      let mem = {
+        id: 'mem',
+        usedP: 0.7,
+        usedText: '70%',
+        used: 111,
+        total: 81010,
+        title: '内存',
+        unit: 'GB',
+        color: ['#57B2F7', 'rgba(87,178,247,0.37)']
+      }
+      let storage = {
+        id: 'storage',
+        usedP: 0.9,
+        usedText: '90%',
+        used: 1110,
+        total: 11111,
+        title: '存储',
+        unit: 'GB',
+        color: ['#EF7976', 'rgba(239,121,118,0.35)']
+      }
+      
+      let options = ({ id, title, color, usedP, usedText }) => ({
+        title: [
+          {
+            text: usedText,
+            subtext: title,
+            x: 'center',
+            y: 36,
+            padding: [24, 0],
+            subtextStyle: {
+              color: '#b4b4b4',
+              fontSize: '12',
+              align: 'center'
+            }
+          }
+        ],
+        series: [
+          {
+            name: '',
+            type: 'gauge',
+            radius: '85%',
+            center: ['50%', '50%'],
+            startAngle: 0,
+            endAngle: 356,
+            splitNumber: 90,
+            hoverAnimation: true,
+            axisTick: {
+              show: false
+            },
+            splitLine: {
+              show: true,
+              length: 3,
+              lineStyle: {
+                color: '#ECECEC',
+                width: 1,
+                type: 'solid'
+              }
+            },
+            axisLabel: {
+              show: false
+            },
+            pointer: {
+              show: false
+            },
+            axisLine: {
+              lineStyle: {
+                opacity: 0
+              }
+            },
+            detail: {
+              show: false
+            },
+            data: [
+              {
+                value: 0,
+                name: ''
+              }
+            ]
+          },
+          {
+            type: 'pie',
+            radius: ['45%', '70%'],
+            center: ['50%', '50%'],
+            color: ['#ECECEC'],
+            hoverAnimation: false,
+            legendHoverLink: false,
+            animation: false,
+            cursor: 'auto',
+            itemStyle: {
+              normal: { color: '#ECECEC' },
+              emphasis: { color: '#ECECEC' }
+            },
+            data: [
+              {
+                name: 'y',
+                value: 1
+              }
+            ],
+            label: {
+              normal: {
+                show: false
+              }
+            }
+          },
+          {
+            type: 'pie',
+            center: ['50%', '50%'],
+            radius: ['55%', '85%'],
+            hoverOffset: 3,
+            z: 3,
+            itemStyle: {
+              normal: {
+                label: {
+                  show: false
+                },
+                labelLine: {
+                  show: false
+                }
+              }
+            },
+            data: [
+              {
+                name: 'used',
+                value: usedP,
+                itemStyle: {
+                  normal: {
+                    color: color[0],
+                    shadowBlur: 6,
+                    shadowColor: color[1],
+                    shadowOffsetX: 0,
+                    shadowOffsetY: 4
+                  }
+                }
+              },
+              {
+                name: 'other',
+                value: 1 - usedP,
+                itemStyle: {
+                  normal: {
+                    color: 'white',
+                    opacity: 0
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      })
+      echarts.init(document.getElementById(cpu.id)).setOption(options({...cpu}))
+      echarts.init(document.getElementById(mem.id)).setOption(options(mem))
+      echarts.init(document.getElementById(storage.id)).setOption(options(storage))
+    </script>
+  </body>
+</html>
