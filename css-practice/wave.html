@@ -26,7 +26,6 @@
                 background-color: rgba(90,181,94,0.1);
                 overflow: hidden;
                 position: relative;
-        
         }            
         .wave {
                 content: '';
@@ -41,9 +40,11 @@
                 background-color:rgba(90,181,94,0.6);
                 border-radius: 38% 42%;
                 box-shadow: 0 -2px 15px 5px rgba(170, 167, 167, 0.5);
+                /* less */
+                /* @top: top;
+                .keyframes-wave(@top); */
                 -webkit-animation: spin 10s infinite linear;
-                animation: spin 10s infinite linear;
-                transition: top 10s ease;
+                animation: wavescale 3s forwards, spin 10s infinite linear;
             }
         @-webkit-keyframes spin {
             100% {
@@ -51,6 +52,25 @@
                 transform: rotate(-360deg);
             }
         }
+        /* less */
+        /* .keyframes-wave (@top){
+          @keyframes wavescale {
+            0%{
+              top:100%
+            }
+            100%{
+              top:@top
+            }
+          }
+          @-webkit-keyframes spin {
+            0%{
+              top:100%
+            }
+            100%{
+              top:@top
+            }
+          }
+         } */
         @keyframes spin {
             100% {
                 -webkit-transform: rotate(-360deg);

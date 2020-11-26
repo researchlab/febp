@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moment</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+</head>
+<body>
+    <script>
+        
+        // console.log(moment().unix(Number))
+        // console.log(moment(1605535516*1000).format('YYYY-MM-DD HH:mm:ss'))
+        // console.log(moment('22:05').format('YYYY-MM-DD HH:mm:ss'))
+        // console.log()
+        // console.log(moment().weekday(1).format('YYYY-MM-DD') +'T00:00:00')
+        // console.log(moment().weekday(7).format('YYYY-MM-DD'))
+
+        // var date = moment().startOf('month');   //当月第一天
+        // var y = date.get('year');
+        // var m = date.get('month') + 1;
+        // var d = date.get('date');
+        // let startDateString = y + "-" + m + "-" + d;
+        // console.log(startDateString)
+        // //结束时间
+
+        // var date1 = moment().endOf('month');     //当月最后一天
+        // var yy = date1.get('year');
+        // var mm = date1.get('month') + 1;
+        // var dd = date1.get('date');
+        // let endDateString = yy + "-" + mm + "-" + dd;
+        // console.log(endDateString)
+
+        // let currDate = moment().format('YYYY-MM-DD')
+        // console.log(currDate)
+        // console.log(moment(moment().startOf('month').valueOf()).format('YYYY-MM-DD'))
+        // console.log(moment(moment().endOf('month').valueOf()).format('YYYY-MM-DD'))
+        console.log(moment().subtract(2, 'hours').unix())
+        let t = moment().unix()
+        console.log(t)
+        console.log(moment(t*1000).format('YYYY-MM-DD HH:mm'))
+        console.log(moment(1604541060*1000).format('YYYY-MM-DD HH:mm'))
+        console.log(moment(1604541120*1000).format('YYYY-MM-DD HH:mm'))
+        console.log(moment(1606286877).format('YYYY-MM-DD HH:mm'))
+        console.log(moment(1606286877*1000).format('YYYY-MM-DD HH:mm'))
+    </script>
+</body>
+</html>

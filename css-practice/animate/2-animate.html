@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS一个常规动画一个循环动画NO JS</title>
+    <style>
+        body {
+  background: black;
+}
+ 
+@keyframes divReady-one {
+  0% { width: 0vmin; }
+  100% { width: 20vmin; }
+}
+ 
+@keyframes divReady-two {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+ 
+#the-div {
+  position: absolute;
+  top: 40vmin;
+  left: 40vmin;
+  width: 0vmin;
+  height: 20vmin;
+  background: orange;
+  animation: 
+    divReady-one 1s forwards,divReady-two 2s 1s infinite;
+}
+    </style>
+</head>
+<body>
+    <div id="the-div">
+    </div>
+</body>
+</html>
