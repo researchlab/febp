@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS3发光进度条动画DEMO演示</title>
+
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link href="css/ProgressBarWars.css" rel="stylesheet" />
+
+<script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
+<script src="js/ProgressBarWars.js"></script>
+<style type="text/css">
+	.progress{
+		margin-top: 30px;
+	}
+</style>
+
+</head>
+<body>
+<div style="text-align:center;clear:both;">
+	<script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
+	<script src="/follow.js" type="text/javascript"></script>
+</div>
+
+<article class="zzsc-container">
+	<div class="zzsc-content">
+		<h1>Example 1 </h1>  
+		  <div class="progress" id="vader"></div>
+		  <div class="progress" id="yoda"></div>
+		  <div class="progress" id="obi"></div>
+		  <div class="progress" id="windu"></div>
+		  <script>
+			var vd=$("#vader").ProgressBarWars({porcentaje:20,estilo:"vader"});
+			var yd=$("#yoda").ProgressBarWars({porcentaje:30,estilo:"yoda"});
+			var ob=$("#obi").ProgressBarWars({porcentaje:50,estilo:"obi"});
+			var wd=$("#windu").ProgressBarWars({porcentaje:80,estilo:"windu"});
+		  </script>
+		  
+		  <input type="button" value="Vader 70%" onclick="vd.mover(70);">
+		  <input type="button" value="Yoda 90%" onclick="yd.mover(90);">
+		  <input type="button" value="Obi 60%" onclick="ob.mover(60);">
+		  <input type="button" value="windu 50%" onclick="wd.mover(50);">
+		  <br/><br/>
+		   <img src="img/Lasers.png"/>
+		  
+		  <h1>Example 2 (Time change)</h1>  
+		  
+		  <div class="progress" id="vaderTime"></div>
+		  <div class="progress" id="yodaTime"></div>
+		  <div class="progress" id="obiTime"></div>
+		  <div class="progress" id="winduTime"></div>
+		  <script>
+			$("#vaderTime").ProgressBarWars({porcentaje:80,estilo:"vader",tiempo:5980});
+			$("#yodaTime").ProgressBarWars({porcentaje:40,estilo:"yoda",tiempo:1000});
+			$("#obiTime").ProgressBarWars({porcentaje:90,estilo:"obi",tiempo:1800});
+			$("#winduTime").ProgressBarWars({porcentaje:5,estilo:"windu",tiempo:1900});
+					
+		  </script>
+		  <img src="img/starwars-logo.png"/>
+		   <h1>Example 3 (Size change)</h1>  
+		  
+		  <div class="progress" id="vaderSize"></div>
+		  <div class="progress" id="yodaSize"></div>
+		  <div class="progress" id="obiSize"></div>
+		  <div class="progress" id="winduSize"></div>
+		<script>
+			$("#vaderSize").ProgressBarWars({porcentaje:80,estilo:"vader",tiempo:5980,alto:"30px"});
+			$("#yodaSize").ProgressBarWars({porcentaje:40,estilo:"yoda",tiempo:1000,alto:"15px"});
+			$("#obiSize").ProgressBarWars({porcentaje:90,estilo:"obi",tiempo:1800,alto:"3px"});
+			$("#winduSize").ProgressBarWars({porcentaje:5,estilo:"windu",tiempo:1900,alto:"5px"});
+		  </script>
+		   
+			
+			   <h1>Example 4 (Color change)</h1>  
+		  
+		  <div class="progress" id="example1"></div>
+		  <div class="progress" id="example2"></div>
+		  <div class="progress" id="example3"></div>
+		  <div class="progress" id="example4"></div>
+		  <div class="progress" id="example5"></div>
+		  <div class="progress" id="example6"></div>
+		  <div class="progress" id="example7"></div>
+		  <div class="progress" id="example8"></div>
+		  <div class="progress" id="example9"></div>
+		  
+	  <script>
+			$("#example1").ProgressBarWars({porcentaje:10,color:"#FF5722"});
+			$("#example2").ProgressBarWars({porcentaje:20,color:"#FDD835"});
+			$("#example3").ProgressBarWars({porcentaje:30,color:"#8E24AA"});
+			$("#example4").ProgressBarWars({porcentaje:40,color:"#827717"});
+		  $("#example5").ProgressBarWars({porcentaje:50,color:"#5E35B1"});
+		  $("#example6").ProgressBarWars({porcentaje:60,color:"#00E5FF"});
+		  $("#example7").ProgressBarWars({porcentaje:70,color:"#6D4C41"});
+		  $("#example8").ProgressBarWars({porcentaje:80,color:"#3F51B5"});
+		  $("#example9").ProgressBarWars({porcentaje:90,color:"#8BC34A"});
+		  
+		  </script>
+		  <img src="img/darth.jpg"/>
+	</div>
+</article>
+<div style="text-align:center;clear:both">
+<script src="/gg_bd_ad_720x90-2.js" type="text/javascript"></script>
+</div>
+
+</body>
+</html>
