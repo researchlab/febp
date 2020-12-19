@@ -1,14 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-// import Hello from './apps/hello/hello';
-
-import UltraButton from './apps/button/button';
-import TagRender from './apps/select/tagRender';
-import TagRenderValue from './apps/select/tagRendervalue'
+import Apps from './apps/apps'
 ReactDOM.render(
-	//<Hello />,
-	// <UltraButton/>,
-	<TagRenderValue/>,
+	<Apps />,
 	document.getElementById('app')
 );
