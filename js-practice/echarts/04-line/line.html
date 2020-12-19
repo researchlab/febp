@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>line</title>
+    <script src="../echarts.min.3.8.5.js"></script>
+   <style>
+       .container{
+           width:300px;
+           height: 300px;
+           border:1px solid red;
+       }
+   </style>
+  </head>
+  <body>
+    <div class="container" id='container'>
+      
+    </div>
+    <script>
+      var date = [1,2,3,4,5,6,7,8,9,10,11,12];
+
+var data = [1,2,3,4,5,6,7,8,9,null,11,12];
+
+
+
+option = {
+    tooltip: {
+        trigger: 'axis',
+        position: function (pt) {
+            return [pt[0], '10%'];
+        }
+    },
+    title: {
+        left: 'center',
+        text: '数据缺失渐变色面积图',
+    },
+    
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: date
+    },
+    yAxis: {
+        type: 'value',
+        boundaryGap: [0, '100%']
+    },
+    
+    series: [
+        {
+            name: '模拟数据',
+            type: 'line',
+            smooth: true,
+            symbol: 'none',
+            sampling: 'average',
+            itemStyle: {
+                color: 'rgb(255, 70, 131)'
+            },
+            areaStyle: {
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                    offset: 0,
+                    color: 'rgba(255, 158, 68, 0.5)'
+                }, {
+                    offset: 1,
+                    color: 'rgb(255, 70, 131)'
+                }])
+            },
+            data: data
+        }
+    ]
+};
+      
+      echarts.init(document.getElementById('container')).setOption(option)
+      console.log('echarts.version:',echarts.version)
+    </script>
+  </body>
+</html>
