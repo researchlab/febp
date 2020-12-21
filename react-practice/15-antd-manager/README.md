@@ -29,6 +29,21 @@ yarn start
 └── yarn.lock
 ```
 
+4.安装插件
+
+4.1安装 React-Router Axios
+```
+yarn add react-router-dom axios less-loader less antd babel-loader babel-preset-react-app babel-plugin-syntax-jsx
+```
+
+4.2 暴露webpack配置文件
+```
+yarn eject
+```
+项目根目录下面多了 config, scripts等文件夹;
+修改 config/webpack.config.js
+
+
 
 
 
