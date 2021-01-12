@@ -1,8 +1,7 @@
-# front-end Best Practices (FEBP™)
+# Front-end Best Practices (FEBP™)
 
 ![js-height](./assets/js-height.png)
 
-- js 动画学习
-	- [js-animate](js-practice/animate)
-- html 常用知识点总结
-  - [html advanced](html-advanced.md)
+### 前端工程化
+- [了解 npm install -S -D 的区别](https://www.cnblogs.com/hukuangjie/p/11369179.html)
+- [husky+ prettier + commitlint 提交前代码检查和提交信息规范](https://www.cnblogs.com/detanx/p/codeFormat.html)
