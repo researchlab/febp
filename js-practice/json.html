@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>json 打印</title>
+<style type='text/css'>
+pre {outline: 1px solid #ccc; padding: 5px; margin: 5px; }
+.string { color: green; }
+.number { color: darkorange; }
+.boolean { color: blue; }
+.null { color: magenta; }
+.key { color: red; }
+</style>
+</head>
+<body>
+<pre id="output"></pre>
+<pre id="output2"></pre>
+
+<script type="text/javascript">
+var obj = {a:1, 'b':'foo', c:[false,null, {d:{e:1.3e5}}]};
+
+// 1. 最简单的输出
+var str = JSON.stringify(obj, undefined, 2);
+document.getElementById('output').innerHTML = str;
+
+// 2. 带高亮的输出
+function highLight(json){
+			 json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+			  return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+				     var cls = 'number';
+				     if (/^"/.test(match)) {
+				         if (/:$/.test(match)) {
+				             cls = 'key';
+				         } else {
+				             cls = 'string';
+				         }
+				     } else if (/true|false/.test(match)) {
+				         cls = 'boolean';
+				     } else if (/null/.test(match)) {
+				         cls = 'null';
+				     }
+				     return '<span class="' + cls + '">' + match + '</span>';
+				 });
+		}
+		var person = {
+			 name: "Hello Kitty",
+			 sex: "男",
+			 age: 20,
+			 child: [
+			 	{
+			 		name: "Hello",
+					sex: "男",
+					age: 10,
+					toy:['a','b']
+			 	},
+			 	{
+			 		name: "Kitty",
+					sex: "女",
+					age: 8,
+					toy:[1,2,3]
+			 	}
+			 ]
+		};
+
+		var str = JSON.stringify(person, undefined, 3);
+
+	
+
+//document.getElementById('output2').innerHTML = syntaxHighlight(str);
+document.getElementById('output2').innerHTML = highLight(str);
+</script>
+
+</body>
+</html>

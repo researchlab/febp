@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="http://apps.bdimg.com/libs/jquery.cookie/1.4.1/jquery.cookie.js"></script>
+</head>
+<body>
+	<input type="text" id="userInput"=></input>
+    <button onclick="SetCookie_input();">Submit</button>
+	<script>
+
+	$(function(){
+		var input_cookie_val = getCookie('username');		
+		if (input_cookie_val != null) {
+			$('#userInput').val(input_cookie_val);	
+		}
+	});
+
+	function SetCookie_input(){
+		var userInput = $('#userInput').val();
+		if (userInput.length != 0 ){
+			setCookie('username', userInput, 1);	
+		}
+	}
+	function setCookie(cname,cvalue,exhours){
+		var cookietime = new Date();
+		cookietime.setTime(cookietime.getTime() + (exhours*60*60*1000));
+		$.cookie(cname, cvalue, {expires:cookietime});	
+	}
+
+	function getCookie(cname){
+		return $.cookie(cname);
+	}
+	
+	function delCookie(cname) {
+		$.cookie(cname,null);
+	}
+	</script>	
+</body>
+</html>
