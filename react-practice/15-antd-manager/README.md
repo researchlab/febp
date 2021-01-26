@@ -1,5 +1,13 @@
 # 项目构建步骤
 
+安装所需要的插件
+1.安装React-Router, Axios 
+2.安装AntD
+3.暴露webpack配置文件
+4.安装less-loader
+5.修改less-loader 
+
+
 1.构建项目
 ```
 create-react-app 15-antd-manager
@@ -31,21 +39,66 @@ yarn start
 
 4.安装插件
 
-4.1安装 React-Router Axios
+4.1安装 plugins
 ```
-yarn add react-router-dom axios less-loader less antd babel-loader babel-preset-react-app babel-plugin-syntax-jsx
+yarn add react-router-dom axios less-loader less antd
 ```
 
 4.2 暴露webpack配置文件
 ```
 yarn eject
 ```
-项目根目录下面多了 config, scripts等文件夹;
-修改 config/webpack.config.js
+
+注意: 
+eject 之后，要先rm node_modules, 然后 重新yarn 装node_modules 再yarn start ，否则会报错;
 
 
 
 
+
+安装 React-Router Axios
+yarn add react-router-dom axios less-loader less
+安装AntD
+yarn add antd 
+暴露webpack配置文件
+yarn eject 
+{
+    loader: require.resolve('less-loader')
+}
+
+babel 插件  按需加载
+sudo yarn add babel-plugin-import 
+
+{
+    test: /\.(js|jsx|mjs)$/,
+    include: paths.appSrc,
+    loader: require.resolve(),
+    options: {
+        plugins:[
+            ['import',[{
+                librayName: 'antd',
+                style:true
+            }]]
+        ],
+        compact: true
+    }
+}
+
+sudo yarn add less@^2.7.3
+
+修改主题
+webpack.config.dev.js 
+{
+    loader: require.resolve('less-loader'),
+    options:{
+        modules:false,
+        modifyVars:{
+            "@primary-color":"#f9c700"
+        }
+    }
+}
+
+yarn add react-router-dom axios less-loader 
 
 # Getting Started with Create React App
 
