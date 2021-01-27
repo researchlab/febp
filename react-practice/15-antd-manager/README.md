@@ -42,6 +42,8 @@ yarn start
 4.1安装 plugins
 ```
 yarn add react-router-dom axios less-loader less antd
+babel 插件  按需加载
+yarn add babel-plugin-import 
 ```
 
 4.2 暴露webpack配置文件
@@ -53,52 +55,72 @@ yarn eject
 eject 之后，要先rm node_modules, 然后 重新yarn 装node_modules 再yarn start ，否则会报错;
 
 
+暴露webpack 配置文件之后, 修改 config/webpack.config.js 文件, 注意这里没有webpack.config.dev.js 
 
 
+具体参考 [react+antd配置less和按需加载](https://blog.csdn.net/banzhuanren1/article/details/101029298?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1.not_use_machine_learn_pai&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1.not_use_machine_learn_pai)
 
-安装 React-Router Axios
-yarn add react-router-dom axios less-loader less
-安装AntD
-yarn add antd 
-暴露webpack配置文件
-yarn eject 
-{
-    loader: require.resolve('less-loader')
-}
+1.在config/webpack.config.js 文件中添加如下代码
+```
+const cssRegex = /\.css$/;
+const cssModuleRegex = /\.module\.css$/;
 
-babel 插件  按需加载
-sudo yarn add babel-plugin-import 
+const sassRegex = /\.(scss|sass)$/;
+const sassModuleRegex = /\.module\.(scss|sass)$/;
 
-{
-    test: /\.(js|jsx|mjs)$/,
-    include: paths.appSrc,
-    loader: require.resolve(),
-    options: {
-        plugins:[
-            ['import',[{
-                librayName: 'antd',
-                style:true
-            }]]
-        ],
-        compact: true
-    }
-}
+添加如下代码 照葫芦画瓢
+const lessRegex = /\.less$/;   
+const lessModuleRegex = /\.module\.less$/;
 
-sudo yarn add less@^2.7.3
-
-修改主题
-webpack.config.dev.js 
-{
-    loader: require.resolve('less-loader'),
-    options:{
-        modules:false,
-        modifyVars:{
-            "@primary-color":"#f9c700"
+在module/rules下添加  注意层级，不要弄错
+            {
+              test: lessRegex,
+              exclude: lessModuleRegex,
+              use: getStyleLoaders(
+                  {
+                    importLoaders: 2,
+                    sourceMap: isEnvProduction && shouldUseSourceMap,
+                  },
+                  'less-loader'
+              ),
+              // Don't consider CSS imports dead code even if the
+              // containing package claims to have no side effects.
+              // Remove this when webpack adds a warning or an error for this.
+              // See https://github.com/webpack/webpack/issues/6571
+              sideEffects: true,
+            },
+            // Adds support for CSS Modules, but using SASS
+            // using the extension .module.scss or .module.sass
+            {
+              test: lessModuleRegex,
+              use: getStyleLoaders(
+                  {
+                    importLoaders: 2,
+                    sourceMap: isEnvProduction && shouldUseSourceMap,
+                    modules: true,
+                    getLocalIdent: getCSSModuleLocalIdent,
+                  },
+                  'less-loader'
+              ),
+            },
+```
+2.在package.json中添加以下代码
+```
+  "babel": {
+    "presets": [
+      "react-app"
+    ],
+    "plugins": [
+      [
+        "import",
+        {
+          "libraryName": "antd",
+          "style": "css"
         }
-    }
-}
-
-yarn add react-router-dom axios less-loader 
+      ]
+    ]
+  }
+```
 
 # Getting Started with Create React App
 
