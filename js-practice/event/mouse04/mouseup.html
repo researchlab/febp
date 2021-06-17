@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <p>Drag the ball.</p>
+
+  <img src="https://en.js.cx/clipart/soccer-gate.svg" id="gate" class="droppable">
+
+  <img src="https://en.js.cx/clipart/ball.svg" id="ball">
+
+  <script>
+    // 我们当前正在飞过的潜在的 droppable 的元素
+    let currentDroppable = null;
+    // id 球
+    ball.onmousedown = function(event) {
+      // 记住鼠标指针到球左上角的距离
+      let shiftX = event.clientX - ball.getBoundingClientRect().left;
+      let shiftY = event.clientY - ball.getBoundingClientRect().top;
+        // 准备移动：确保 absolute，并通过设置 z-index 以确保球在顶部
+      ball.style.position = 'absolute';
+      ball.style.zIndex = 1000;
+      // 将其从当前父元素中直接移动到 body 中
+        // 以使其定位是相对于 body 的
+      document.body.append(ball);
+
+      moveAt(event.pageX, event.pageY);
+    // 现在球的中心在 (pageX, pageY) 坐标上
+      function moveAt(pageX, pageY) {
+        ball.style.left = pageX - shiftX + 'px';
+        ball.style.top = pageY - shiftY + 'px';
+      }
+
+      function onMouseMove(event) {
+        moveAt(event.pageX, event.pageY);
+        // 在一个鼠标事件处理程序中
+        ball.hidden = true; // (*) 隐藏我们拖动的元素
+        // elemBelow 是球下方的元素，可能是 droppable 的元素
+        let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+        ball.hidden = false;
+
+        // mousemove 事件可能会在窗口外被触发（当球被拖出屏幕时）
+        // 如果 clientX/clientY 在窗口外，那么 elementfromPoint 会返回 null
+        if (!elemBelow) return;
+        
+        // 潜在的 droppable 的元素被使用 "droppable" 类进行标记（也可以是其他逻辑）
+        let droppableBelow = elemBelow.closest('.droppable');
+        if (currentDroppable != droppableBelow) {
+          // 我们正在飞入或飞出...
+          // 注意：它们两个的值都可能为 null
+          //   currentDroppable=null —— 如果我们在此事件之前，鼠标指针不是在一个 droppable 的元素上（例如空白处）
+          //   droppableBelow=null —— 如果现在，在当前事件中，我们的鼠标指针不是在一个 droppable 的元素上
+
+          if (currentDroppable) { // null when we were not over a droppable before this event
+            // 处理“飞出” droppable 的元素时的处理逻辑（移除高亮）
+            leaveDroppable(currentDroppable);
+          }
+          currentDroppable = droppableBelow;
+          if (currentDroppable) { // null if we're not coming over a droppable now
+            // (maybe just left the droppable)
+            // 处理“飞入” droppable 的元素时的逻辑
+            enterDroppable(currentDroppable);
+          }
+        }
+      }
+      // 在 mousemove 事件上移动球
+      document.addEventListener('mousemove', onMouseMove);
+      // 放下球，并移除不需要的处理程序
+      ball.onmouseup = function() {
+        document.removeEventListener('mousemove', onMouseMove);
+        ball.onmouseup = null;
+      };
+
+    };
+
+    function enterDroppable(elem) {
+      elem.style.background = 'pink';
+    }
+
+    function leaveDroppable(elem) {
+      elem.style.background = '';
+    }
+    // 禁用浏览器自身的拖拽行为
+    ball.ondragstart = function() {
+      return false;
+    };
+  </script>
+
+
+</body>
+</html>
